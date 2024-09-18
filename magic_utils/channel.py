@@ -1,4 +1,5 @@
 from functools import total_ordering
+import threading 
 
 @total_ordering 
 class channel():
@@ -17,6 +18,11 @@ class channel():
     def notify(self):
         for sub, args, kwargs in self.subscribers:
             sub(args, kwargs) 
+
+    def notify_parallel(self, num_threads: int = 2):
+        threads = []
+        for _ in len(num_threads):
+            pass
 
     def __getitem__(self, func: callable):
          return [(sub, args, kwargs) for sub, args, kwargs in self.subscribers if func == sub]
