@@ -102,7 +102,7 @@ class Channel:
         for thread in threads:
             thread.join()
 
-    def __getitem__(self, subscriber: callable) -> list[tuple(callable, any, any)]:
+    def __getitem__(self, subscriber: callable) -> list[tuple[callable, any, any]]:
         """
         Get the list of arguments and keyword arguments for a specific subscriber.
 
@@ -116,7 +116,7 @@ class Channel:
     
     def __eq__(self, other):
         """
-        Check if this `Channel` instance is equal to another `Channel` instance.
+        Check if this `Channel` instance is equal to another `Channel` instance by comparing both subscribers lists.
 
         :param other: The other `Channel` instance to compare with.
         :return: True if both instances have the same subscribers, False otherwise.
