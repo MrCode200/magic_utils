@@ -1,0 +1,25 @@
+[project]
+name = "magic_utils"
+version = "0.1.0"
+description = "Contains Utility Classes and Functions"
+authors = [
+    {name = "MrCode200", email = "navidyaghmaei@gmail.com"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+keywords = []
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.pytest.ini_options]
+minversion = "8.3.2"
+addopts = "-ra -q"
+testpaths = ["tests"]
+
+[project.optional-dependencies]
+docs = ["mkdocs>=1.0.0", "mkdocs-material"]  # Add MkDocs and any desired themes or plugins here
