@@ -22,4 +22,4 @@ addopts = "-ra -q"
 testpaths = ["tests"]
 
 [project.optional-dependencies]
-docs = ["mkdocs>=1.0.0", "mkdocs-material"]  # Add MkDocs and any desired themes or plugins here
+docs = ["mkdocs>=1.0.0", "mkdocs-material"]
