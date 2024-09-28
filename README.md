@@ -10,12 +10,11 @@
 
 
 
-[Description]
-
+A useful Libary of classes and functions
 
 ### It provides:
 
-- [Bullet points of it provides]
+- A channel manager (for function to be subscribed to)
 
 ## Table of Contents
 
@@ -42,7 +41,7 @@
 
 ### Testing:
 
-PowerDecos requires `pytest`. Tests can then be run after installation:
+`Magic Utils` requires `pytest`. Tests can then be run after installation:
 - run:`pytest`
 - or run: `poetry run pytest`
 - to get a html coverage review add `--cov-report=html` to the end of `pytest`
@@ -60,12 +59,12 @@ Or
 
 ## Road Map
 
-1. [ ] [Goal to achieve]
+1. [ ] Generate documentation
 
 
 ## Call for Contributions
 
-We’re excited that you’re interested in contributing to Package Name! Whether you’re fixing bugs, adding new features, improving documentation, or simply suggesting enhancements, your contributions are invaluable to us.
+We’re excited that you’re interested in contributing to `Magic Utils`! Whether you’re fixing bugs, adding new features, improving documentation, or simply suggesting enhancements, your contributions are invaluable to us.
 
 
 Every bit helps, and we appreciate your effort and enthusiasm!
