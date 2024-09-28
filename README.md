@@ -59,12 +59,12 @@ Or
 
 ## Road Map
 
-1. [ ] [Goal to achieve]
+1. [ ] Generate documentation
 
 
 ## Call for Contributions
 
-We’re excited that you’re interested in contributing to Package Name! Whether you’re fixing bugs, adding new features, improving documentation, or simply suggesting enhancements, your contributions are invaluable to us.
+We’re excited that you’re interested in contributing to Magic Utils! Whether you’re fixing bugs, adding new features, improving documentation, or simply suggesting enhancements, your contributions are invaluable to us.
 
 
 Every bit helps, and we appreciate your effort and enthusiasm!
