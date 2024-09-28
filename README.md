@@ -41,7 +41,7 @@ A useful Libary of classes and functions
 
 ### Testing:
 
-PowerDecos requires `pytest`. Tests can then be run after installation:
+Magic Utils requires `pytest`. Tests can then be run after installation:
 - run:`pytest`
 - or run: `poetry run pytest`
 - to get a html coverage review add `--cov-report=html` to the end of `pytest`
