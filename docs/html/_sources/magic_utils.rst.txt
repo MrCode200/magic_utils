@@ -1,0 +1,21 @@
+magic\_utils package
+====================
+
+Submodules
+----------
+
+magic\_utils.channel module
+---------------------------
+
+.. automodule:: magic_utils.channel
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: magic_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:

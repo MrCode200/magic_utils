@@ -1,0 +1,8 @@
+magic_utils
+===========
+
+.. toctree::
+   :maxdepth: 4
+
+   magic_utils
+   setup
