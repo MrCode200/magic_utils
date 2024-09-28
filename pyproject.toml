@@ -1,25 +1,30 @@
-[project]
+[tool.poetry]
 name = "magic_utils"
 version = "0.1.0"
-description = "Contains Utility Classes and Functions"
-authors = [
-    {name = "MrCode200", email = "navidyaghmaei@gmail.com"}
-]
-readme = "README.md"
-license = {text = "MIT"}
-requires-python = ">=3.10"
-keywords = []
+description = "Contains useful utilities classes and functions."
+authors = ["MrCode200 <navidyaghmaei@example.com>"]
+license = "MIT"  # Change as needed
+readme = "README.md"  # Optional
+homepage = "https://github.com/MrCode200/magic_utils"  # Change as needed
+repository = "https://github.com/MrCode200/magic_utils"  # Change as needed
+keywords = ["keyword1", "keyword2"]
 
-[tool.setuptools]
-package-dir = {"" = "."}
+[tool.poetry.dependencies]
+python = "^3.11"
 
-[tool.setuptools.packages.find]
-where = ["."]
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+pytest-cov = "^5.0.0"
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^8.0.2"
+sphinx-rtd-theme = "^2.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
 minversion = "8.3.2"
-addopts = "-ra -q"
+addopts = "-v --cov=power_decos --cov-report=term-missing"
 testpaths = ["tests"]
-
-[project.optional-dependencies]
-docs = ["mkdocs>=1.0.0", "mkdocs-material"]

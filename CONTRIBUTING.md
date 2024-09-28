@@ -10,7 +10,7 @@ Thank you for considering contributing to `Magic Utils`! We appreciate your inte
 2. **Clone Your Fork**: Clone your fork to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/MagicUtils.git
+   git clone https://github.com/MrCode/magic_utils.git
 
 3. **Create a Branch**: Create a new branch for your work:
 

@@ -1,4 +1,4 @@
-## How to Use Sphinx for Generating HTML Documentation
+# How to Use Sphinx for Generating HTML Documentation
 
 ## Table of Contents
 
@@ -10,13 +10,13 @@
 - [Steps to Update the Sphinx HTML Documentation](#steps-to-update-the-sphinx-html-documentation)
 - [Command Summary of Update the Sphinx HTML Documentation:](#command-summary-of-update-the-sphinx-html-documentation)
 
+### All steps till [Optional: Host the HTML Documentation Online](#optional-host-the-html-documentation-online) and [Steps to Update the Sphinx HTML Documentation](#steps-to-update-the-sphinx-html-documentation) can be skipped by running [power_decos\.github\generate_docs.bat](./generate_docs.bat)
+
 ### First Time Setup Commands:
 1. #### Initialize Sphinx:
     ```
    > cd docs
    > sphinx-quickstart
-   # or
-   > python -m sphinx.cmd.quickstart
    
 This command will guide you through setting up a basic conf.py, index.rst, 
 and other necessary files. Answer the prompts based on your project setup.3. 
@@ -64,30 +64,33 @@ and other necessary files. Answer the prompts based on your project setup.3.
 
     ```
     html_theme = 'sphinx_rtd_theme'
+    html_static_path = ['_static']```
    
 ### Generating HTML Documentation
 1. #### Build the HTML
-    Once everything is set up, go back to the `docs` directory:
+   Once everything is set up, go back to the `docs` directory:
     ```
     > cd docs
     > .\make.bat html  # On Windows
     # or
     > make html        # On Unix/macOS
     ```
-   This command generates the HTML documentation in the docs/_build/html/ folder. 
-    You can open index.html in your browser to view it.
+   This command generates the HTML documentation in the docs/_build/html/ folder. Best to move it from docs/_build/html/ to docs/html/
+   
+   You can open index.html in your browser to view it.
+   
+   NOTE: only the html folder is needed
 
-2. #### Open Website in Browser:
+3. #### Open Website in Browser:
     - Once created you can move the `html` folder outside of _build
     - To run the website in your local browser open the `html` file and run the `index.html`
 
 ### Optional: Host the HTML Documentation Online
 
 1. #### Use RawGitHack for Hosting
-- In your GitHub repository, navigate to the `index.html` file inside.
-- Click on the three dots (`...`) next to the file and choose `Copy Permalink`
-- Visit https://raw.githack.com/
-- Paste the permalink into RawGitHack, 
+- open your index.html file inside github.com
+- click on raw button above the html code
+- change in the url `raw.githubusercontent.com` with `raw.githack.com`
 and it will give you a usable URL for sharing your documentation. 
 
 2. #### Share the URL:
