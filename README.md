@@ -10,12 +10,11 @@
 
 
 
-[Description]
-
+A useful Libary of classes and functions
 
 ### It provides:
 
-- [Bullet points of it provides]
+- A channel manager (for function to be subscribed to)
 
 ## Table of Contents
 
