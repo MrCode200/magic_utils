@@ -2,12 +2,11 @@
 
 # 🔮MagicUtils 
 
-|         | Placeholder                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|         |Badges                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Testing | [![CI - Test](https://github.com/pandas-dev/pandas/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/MrCode200/power_deco/tests) [![Coverage](https://codecov.io/github/pandas-dev/pandas/coverage.svg?branch=main)](https://codecov.io/gh/pandas-dev/pandas)                                                                                                                                                                                                                                                                                                            |
-| Package | [![PyPI Latest Release](https://img.shields.io/pypi/v/pandas.svg)](https://pypi.org/project/pandas/) [![PyPI Downloads](https://img.shields.io/pypi/dm/pandas.svg?label=PyPI%20downloads)](https://pypi.org/project/pandas/) [![Conda Latest Release](https://anaconda.org/conda-forge/pandas/badges/version.svg)](https://anaconda.org/conda-forge/pandas) [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandas.svg?label=Conda%20downloads)](https://anaconda.org/conda-forge/pandas)                                                                              |
-| Meta    | [![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3509134.svg)](https://doi.org/10.5281/zenodo.3509134) [![License - BSD 3-Clause](https://img.shields.io/pypi/l/pandas.svg)](https://github.com/pandas-dev/pandas/blob/main/LICENSE) [![Slack](https://img.shields.io/badge/join_Slack-information-brightgreen.svg?logo=slack)](https://pandas.pydata.org/docs/dev/development/community.html?highlight=slack#community-slack) |
-
+| Testing | [![CI - Test](https://img.shields.io/codecov/c/github/MrCode200/power_decos?logo=codecov&label=Coverage)](https://app.codecov.io/github/MrCode200/power_decos) [![Run tests and upload coverage](https://github.com/MrCode200/power_decos/actions/workflows/codecov-coverage.yml/badge.svg)](https://github.com/MrCode200/power_decos/actions/workflows/codecov-coverage.yml) ![Python-Coverage](https://img.shields.io/badge/pytest-covered-blue?logo=pytest)|
+| Package | [![PyPI Latest Release](https://img.shields.io/pypi/v/power-decos)](https://pypi.org/project/power-decos/) [![PyPI Downloads](https://img.shields.io/pypi/dm/power-decos.svg?label=PyPI%20downloads)](https://pypi.org/project/power-decos/) ![Forks](https://img.shields.io/github/forks/MrCode200/power_decos?style=flat&label=Forks)
+| Meta    |[![License - MIT](https://img.shields.io/github/license/MrCode200/power_decos)](https://github.com/MrCode200/power_decos/blob/main/LICENSE) ![Poetry](https://img.shields.io/badge/poetry-managed-blue)
 
 
 A Python package full of various utilities.
@@ -36,12 +35,15 @@ A Python package full of various utilities.
 
    ```bash
     pip install git+https://github.com/MrCode200/magic_utils.git
+   ```
 
 ### Testing:
 
-PowerDecos requires `pytest`.  Tests can then be run after installation inside the package folder with:
+PowerDecos requires `pytest`.  Tests can then be run after installation:
 
 # Not Testing yet implemented
+
+Note if it doesnt work try to go inside the folder and then run the commands
 
 ## Documentation
 
