@@ -1,0 +1,21 @@
+tests package
+=============
+
+Submodules
+----------
+
+tests.test\_channel module
+--------------------------
+
+.. automodule:: tests.test_channel
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: tests
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -6,3 +6,4 @@ magic_utils
 
    magic_utils
    setup
+   tests

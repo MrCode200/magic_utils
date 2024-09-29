@@ -46,8 +46,30 @@
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">magic_utils package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#magic-utils-channel-module">magic_utils.channel module</a></li>
-<li><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li><a class="reference internal" href="#module-magic_utils.channel">magic_utils.channel module</a><ul>
+<li><a class="reference internal" href="#channel-module">channel_module</a></li>
+<li><a class="reference internal" href="#usage-example">Usage example:</a></li>
+<li><a class="reference internal" href="#magic_utils.channel.Channel"><code class="docutils literal notranslate"><span class="pre">Channel</span></code></a><ul>
+<li><a class="reference internal" href="#magic_utils.channel.Channel.clear"><code class="docutils literal notranslate"><span class="pre">Channel.clear()</span></code></a></li>
+<li><a class="reference internal" href="#magic_utils.channel.Channel.notify_all"><code class="docutils literal notranslate"><span class="pre">Channel.notify_all()</span></code></a></li>
+<li><a class="reference internal" href="#magic_utils.channel.Channel.notify_parallel"><code class="docutils literal notranslate"><span class="pre">Channel.notify_parallel()</span></code></a></li>
+<li><a class="reference internal" href="#magic_utils.channel.Channel.subscribe"><code class="docutils literal notranslate"><span class="pre">Channel.subscribe()</span></code></a></li>
+<li><a class="reference internal" href="#magic_utils.channel.Channel.unsubscribe"><code class="docutils literal notranslate"><span class="pre">Channel.unsubscribe()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-magic_utils">Module contents</a><ul>
+<li><a class="reference internal" href="#magic_utils.Channel"><code class="docutils literal notranslate"><span class="pre">Channel</span></code></a><ul>
+<li><a class="reference internal" href="#magic_utils.Channel.clear"><code class="docutils literal notranslate"><span class="pre">Channel.clear()</span></code></a></li>
+<li><a class="reference internal" href="#magic_utils.Channel.notify_all"><code class="docutils literal notranslate"><span class="pre">Channel.notify_all()</span></code></a></li>
+<li><a class="reference internal" href="#magic_utils.Channel.notify_parallel"><code class="docutils literal notranslate"><span class="pre">Channel.notify_parallel()</span></code></a></li>
+<li><a class="reference internal" href="#magic_utils.Channel.subscribe"><code class="docutils literal notranslate"><span class="pre">Channel.subscribe()</span></code></a></li>
+<li><a class="reference internal" href="#magic_utils.Channel.unsubscribe"><code class="docutils literal notranslate"><span class="pre">Channel.unsubscribe()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -81,11 +103,169 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
-<section id="magic-utils-channel-module">
-<h2>magic_utils.channel module<a class="headerlink" href="#magic-utils-channel-module" title="Link to this heading"></a></h2>
+<section id="module-magic_utils.channel">
+<span id="magic-utils-channel-module"></span><h2>magic_utils.channel module<a class="headerlink" href="#module-magic_utils.channel" title="Link to this heading"></a></h2>
+<section id="channel-module">
+<h3>channel_module<a class="headerlink" href="#channel-module" title="Link to this heading"></a></h3>
+<p>This module defines the <cite>Channel</cite> class, which facilitates the management of subscribers and the notification process.</p>
+<p>The <cite>Channel</cite> class allows subscribers to be added, removed, and notified either sequentially or in parallel. Subscribers are callable objects that can be invoked with arguments and keyword arguments.</p>
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<section id="usage-example">
+<h3>Usage example:<a class="headerlink" href="#usage-example" title="Link to this heading"></a></h3>
+<blockquote>
+<div><p># Create a new channel
+ch = Channel()</p>
+<p># Define some subscriber functions
+def subscriber1(arg1, kwarg1=None):</p>
+<blockquote>
+<div><p>print(f”Subscriber 1: {arg1}, {kwarg1}”)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>def subscriber2(arg1, kwarg1=None):</dt><dd><p>print(f”Subscriber 2: {arg1}, {kwarg1}”)</p>
+</dd>
+</dl>
+<p># Subscribe to the channel
+ch.subscribe(subscriber1, ‘data1’, kwarg1=’value1’)
+ch.subscribe(subscriber2, ‘data2’)</p>
+<p># Notify all subscribers sequentially
+ch.notify_all()</p>
+<p># Notify all subscribers in parallel (2 threads)
+ch.notify_parallel(num_threads=2)</p>
+</div></blockquote>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="magic_utils.channel.Channel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">magic_utils.channel.</span></span><span class="sig-name descname"><span class="pre">Channel</span></span><a class="reference internal" href="_modules/magic_utils/channel.html#Channel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.channel.Channel" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to manage subscribers and their notifications.</p>
+<p>The <cite>Channel</cite> class manages a list of subscribers and supports adding, removing, and notifying these subscribers. Subscribers can be notified sequentially with <cite>notify_all</cite> or in parallel with <cite>notify_parallel</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>subscribers</strong> – A list where each element is a tuple containing a callable subscriber and its associated arguments and keyword arguments.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.channel.Channel.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/channel.html#Channel.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.channel.Channel.clear" title="Link to this definition"></a></dt>
+<dd><p>Remove all subscribers from the channel.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.channel.Channel.notify_all">
+<span class="sig-name descname"><span class="pre">notify_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/channel.html#Channel.notify_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.channel.Channel.notify_all" title="Link to this definition"></a></dt>
+<dd><p>Notify all subscribers sequentially.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.channel.Channel.notify_parallel">
+<span class="sig-name descname"><span class="pre">notify_parallel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/channel.html#Channel.notify_parallel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.channel.Channel.notify_parallel" title="Link to this definition"></a></dt>
+<dd><p>Notify all subscribers in parallel using the specified number of threads.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>num_threads</strong> – The number of threads to use for parallel notification. Must be 2 or higher.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>num_threads</cite> is less than 2.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.channel.Channel.subscribe">
+<span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscriber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">subscriber_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subscriber_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/channel.html#Channel.subscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.channel.Channel.subscribe" title="Link to this definition"></a></dt>
+<dd><p>Add a new subscriber to the channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subscriber</strong> – A callable object that will be notified.</p></li>
+<li><p><strong>subscriber_args</strong> – Arguments to be passed to the subscriber callable.</p></li>
+<li><p><strong>subscriber_kwargs</strong> – Keyword arguments to be passed to the subscriber callable.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.channel.Channel.unsubscribe">
+<span class="sig-name descname"><span class="pre">unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscriber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/channel.html#Channel.unsubscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.channel.Channel.unsubscribe" title="Link to this definition"></a></dt>
+<dd><p>Remove a subscriber from the channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>subscriber</strong> – The callable object to be removed from the list of subscribers.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-magic_utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-magic_utils" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="magic_utils.Channel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">magic_utils.</span></span><span class="sig-name descname"><span class="pre">Channel</span></span><a class="reference internal" href="_modules/magic_utils/channel.html#Channel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.Channel" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to manage subscribers and their notifications.</p>
+<p>The <cite>Channel</cite> class manages a list of subscribers and supports adding, removing, and notifying these subscribers. Subscribers can be notified sequentially with <cite>notify_all</cite> or in parallel with <cite>notify_parallel</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>subscribers</strong> – A list where each element is a tuple containing a callable subscriber and its associated arguments and keyword arguments.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.Channel.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/channel.html#Channel.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.Channel.clear" title="Link to this definition"></a></dt>
+<dd><p>Remove all subscribers from the channel.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.Channel.notify_all">
+<span class="sig-name descname"><span class="pre">notify_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/channel.html#Channel.notify_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.Channel.notify_all" title="Link to this definition"></a></dt>
+<dd><p>Notify all subscribers sequentially.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.Channel.notify_parallel">
+<span class="sig-name descname"><span class="pre">notify_parallel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/channel.html#Channel.notify_parallel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.Channel.notify_parallel" title="Link to this definition"></a></dt>
+<dd><p>Notify all subscribers in parallel using the specified number of threads.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>num_threads</strong> – The number of threads to use for parallel notification. Must be 2 or higher.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>num_threads</cite> is less than 2.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.Channel.subscribe">
+<span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscriber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">subscriber_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subscriber_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/channel.html#Channel.subscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.Channel.subscribe" title="Link to this definition"></a></dt>
+<dd><p>Add a new subscriber to the channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subscriber</strong> – A callable object that will be notified.</p></li>
+<li><p><strong>subscriber_args</strong> – Arguments to be passed to the subscriber callable.</p></li>
+<li><p><strong>subscriber_kwargs</strong> – Keyword arguments to be passed to the subscriber callable.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.Channel.unsubscribe">
+<span class="sig-name descname"><span class="pre">unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscriber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/channel.html#Channel.unsubscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.Channel.unsubscribe" title="Link to this definition"></a></dt>
+<dd><p>Remove a subscriber from the channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>subscriber</strong> – The callable object to be removed from the list of subscribers.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 
