@@ -1,30 +1,20 @@
 @ECHO OFF
-setlocal
+:: sphinx-quickstart command
+sphinx-quickstart || (echo !RED!BOLD FAILED: sphinx-quickstart did not run !RESET! & exit /b 1)
+echo !GREEN!BOLD SUCCESSFUL [1/7]: sphinx-quickstart completed !RESET!
 
-:: Step 1: Run sphinx-quickstart
-sphinx-quickstart || (
-    echo !RED!BOLD FAILED: sphinx-quickstart did not run !RESET!
-    exit /b 1
-)
-echo !GREEN! SUCCESSFUL [1/6]: sphinx-quickstart completed !RESET!
-
-:: Step 2: Move up one directory
+:: Move up one directory
 cd ..
 
-:: Step 3: Run sphinx-apidoc to generate rst files
-sphinx-apidoc -o docs . || (
-    echo !RED!BOLD FAILED: Couldn't generate rst files !RESET!
-    exit /b 1
-)
-echo !GREEN! SUCCESSFUL [2/6]: Created rst files !RESET!
+:: sphinx-apidoc command
+sphinx-apidoc -o docs . || (echo !RED!BOLD FAILED: Couldn't generate rst files !RESET! & exit /b 1)
+echo !GREEN!BOLD SUCCESSFUL [2/7]: Created rst files !RESET!
 
-:: Step 4: Change directory to 'docs'
-cd docs || (
-    echo !RED!BOLD FAILED: Couldn't change directory to docs !RESET!
-    exit /b 1
-)
+:: Change to docs directory
+cd docs
 
-:: Step 5: Delete lines 8 to 12 and
+:: Insert text into index.rst
+:: Step 1: Delete lines 8 to 12 from index.rst
 powershell -Command ^
     "$content = Get-Content 'index.rst';" ^
     "$newContent = $content[0..7] + $content[13..($content.Count - 1)];" ^
@@ -35,7 +25,8 @@ if ERRORLEVEL 1 (
     echo !RED! FAILED: Couldn't delete lines in index.rst !RESET!
     exit /b 1
 )
-echo !GREEN! SUCCESSFUL [3/6]: Deleted lines in index.rst !RESET!
+
+echo !GREEN! SUCCESSFUL [3/7]: Deleted lines in index.rst !RESET!
 
 :: Insert 'modules' into index.rst
 powershell -Command ^
@@ -48,26 +39,31 @@ if ERRORLEVEL 1 (
     echo !RED! FAILED: Couldn't insert 'modules' into index.rst !RESET!
     exit /b 1
 )
-echo !GREEN! SUCCESSFUL [4/6]: Inserted 'modules' into index.rst !RESET!
 
-:: Step 6: Modify extensions in conf.py
+echo !GREEN! SUCCESSFUL [4/7]: Inserted lines in index.rst !RESET!
+
+:: Step 5: Insert lines into conf.py at line 8
 powershell -Command ^
-    "(Get-Content 'conf.py') | ForEach-Object { if ($_ -match '^extensions =') { 'extensions = [\"sphinx.ext.todo\", \"sphinx.ext.viewcode\", \"sphinx.ext.autodoc\"]' } else { $_ } } | Set-Content 'conf.py';"
+    "$content = Get-Content 'conf.py';" ^
+    "$newContent = $content[0..7] + @('import os, sys', 'sys.path.insert(0, os.path.abspath(''..''))') + $content[8..($content.Count - 1)];" ^
+    "$newContent | Set-Content 'conf.py';"
 
+:: Check ERRORLEVEL after the PowerShell command
 if ERRORLEVEL 1 (
-    echo !RED! FAILED: Couldn't modify extensions in config.py !RESET!
+    echo !RED! FAILED: Couldn't insert lines into conf.py !RESET!
     exit /b 1
 )
-echo !GREEN! SUCCESSFUL [5/6]: Modified extensions in conf.py !RESET!
 
-:: Step 7: Modify theme in conf.py
+echo !GREEN! SUCCESSFUL [5/7]: Inserted lines into conf.py !RESET!
+
+:: Modify extensions in conf.py
 powershell -Command ^
-    "(Get-Content 'conf.py') | ForEach-Object { if ($_ -match '^html_theme =') { 'html_theme = \"sphinx_rtd_theme\"' } else { $_ } } | Set-Content 'conf.py';"
+    "(Get-Content 'conf.py') | ForEach-Object { if ($_ -match '^extensions =') { 'extensions = [\"sphinx.ext.todo\", \"sphinx.ext.viewcode\", \"sphinx.ext.autodoc\"]' } else { $_ } } | Set-Content 'conf.py'" || (echo !RED! FAILED: Couldn't modify extensions in config.py !RESET! & exit /b 1)
 
-if ERRORLEVEL 1 (
-    echo !RED! FAILED: Couldn't modify theme in config.py !RESET!
-    exit /b 1
-)
-echo !GREEN! SUCCESSFUL [6/6]: Modified theme in conf.py !RESET!
+echo !GREEN! SUCCESSFUL [6/7]: Modified extensions in config.py !RESET!
 
-endlocal
+:: Modify theme in config.py
+powershell -Command ^
+    "(Get-Content 'conf.py') | ForEach-Object { if ($_ -match '^html_theme =') { 'html_theme = \"sphinx_rtd_theme\"' } else { $_ } } | Set-Content 'conf.py'" || (echo !RED! FAILED: Couldn't modify theme in config.py !RESET! & exit /b 1)
+
+echo !GREEN! SUCCESSFUL [7/7]: Modified theme in config.py !RESET!

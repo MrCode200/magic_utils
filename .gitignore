@@ -167,3 +167,4 @@ cython_debug/
 /docs/Makefile
 /docs/modules.rst
 /docs/setup.rst
+/docs/tests.rst
