@@ -4,10 +4,10 @@ magic\_utils package
 Submodules
 ----------
 
-magic\_utils.channel module
----------------------------
+magic\_utils.eventmanager module
+--------------------------------
 
-.. automodule:: magic_utils.channel
+.. automodule:: magic_utils.eventmanager
    :members:
    :undoc-members:
    :show-inheritance:
