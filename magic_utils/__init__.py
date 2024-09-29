@@ -1,6 +1,6 @@
 __Version__ = "0.0.1"
 __Author__ = "MrCode200"
 
-from .channel import Channel
+from .eventmanager import EventManager
 
-__all__ = ["Channel"]
+__all__ = ["EventManager"]
