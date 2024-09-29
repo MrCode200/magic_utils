@@ -1,4 +1,6 @@
 @ECHO OFF
+setlocal
+
 :: sphinx-quickstart command
 sphinx-quickstart || (echo !RED!BOLD FAILED: sphinx-quickstart did not run !RESET! & exit /b 1)
 echo !GREEN!BOLD SUCCESSFUL [1/7]: sphinx-quickstart completed !RESET!
@@ -31,7 +33,7 @@ echo !GREEN! SUCCESSFUL [3/7]: Deleted lines in index.rst !RESET!
 :: Insert 'modules' into index.rst
 powershell -Command ^
     "$content = Get-Content 'index.rst';" ^
-    "$newContent = $content[0..11] + '    modules' + $content[12..($content.Count - 1)];" ^
+    "$newContent = $content[0..11] + '  modules' + $content[12..($content.Count - 1)];" ^
     "$newContent | Set-Content 'index.rst';"
 
 :: Check ERRORLEVEL after the PowerShell command
@@ -67,3 +69,5 @@ powershell -Command ^
     "(Get-Content 'conf.py') | ForEach-Object { if ($_ -match '^html_theme =') { 'html_theme = \"sphinx_rtd_theme\"' } else { $_ } } | Set-Content 'conf.py'" || (echo !RED! FAILED: Couldn't modify theme in config.py !RESET! & exit /b 1)
 
 echo !GREEN! SUCCESSFUL [7/7]: Modified theme in config.py !RESET!
+
+endlocal
