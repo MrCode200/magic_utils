@@ -5,5 +5,4 @@ magic_utils
    :maxdepth: 4
 
    magic_utils
-   setup
    tests
