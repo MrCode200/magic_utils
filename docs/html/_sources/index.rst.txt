@@ -10,5 +10,5 @@ magic_utils documentation
    :maxdepth: 2
    :caption: Contents:
 
-    modules
+   modules
 
