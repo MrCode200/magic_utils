@@ -59,7 +59,8 @@ Or
 
 ## Road Map
 
-1. [ ] Generate documentation
+1. [x] Generate documentation
+2. [ ] Add more utility 
 
 
 ## Call for Contributions
