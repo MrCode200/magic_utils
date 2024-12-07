@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/project/power-decos/${{ github.ref_name }}
+      url: https://pypi.org/project/${{ github.repository }}/${{ github.ref_name }}
     permissions:
       id-token: write
 
