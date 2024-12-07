@@ -1,4 +1,4 @@
-from magic_utils.eventmanager import EventManager
+from magic_utils.eventManager import EventManager
 
 import warnings
 import pytest
