@@ -15,9 +15,11 @@ BOLD: str = '\033[1m'
 UNDERLINE: str = '\033[4m'
 RESET_UNDERLINE: str = '\033[24m'  # Resets underline onl
 
-extra_args: list[str] = []
-
 class ColoredFormatter(Formatter):
+    def __init__(self, extra_args: list[str] = None):
+        super().__init__()
+        self.extra_args = {} if extra_args is None else extra_args
+
     def format(self, record) -> str:
         log_color: str = LOG_COLORS.get(record.levelname, LOG_COLORS['RESET'])
         reset: str = LOG_COLORS['RESET']
@@ -31,9 +33,9 @@ class ColoredFormatter(Formatter):
         )
 
         # Append extra information if available, with labels underlined
-        if extra_args:
+        if self.extra_args:
             formatted_extras = " | ".join(
-                f"{UNDERLINE}{arg}: {RESET_UNDERLINE}{getattr(record, arg, 'None')}" for arg in extra_args
+                f"{UNDERLINE}{arg}: {RESET_UNDERLINE}{getattr(record, arg, 'None')}" for arg in self.extra_args
             )
             formatted_message += f"{BOLD}{formatted_extras}\n"
 
@@ -44,6 +46,10 @@ class ColoredFormatter(Formatter):
 
 
 class JsonFormatter(Formatter):
+    def __init__(self, extra_args: list[str] = None):
+        super().__init__()
+        self.extra_args = {} if extra_args is None else extra_args
+
     def format(self, record) -> str:
         log_record: dict[str, any] = {
             "timestamp": self.formatTime(record),
@@ -56,7 +62,7 @@ class JsonFormatter(Formatter):
         }
 
         extra_log_record = {
-            arg: getattr(record, arg, 'None') for arg in extra_args
+            arg: getattr(record, arg, 'None') for arg in self.extra_args
         }
 
         final_log_record = log_record | extra_log_record

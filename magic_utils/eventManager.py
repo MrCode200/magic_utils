@@ -124,8 +124,8 @@ class EventManager:
         lock = threading.Lock()
 
         def _notify_worker(chunk):
-            """Calls all functions and saves values returned while ensuring that threads dont access the results simultaneously
-            :param subs: List of tuples, where each tuple contains a callable subscriber, its arguments, and keyword arguments.
+            """Calls all functions and saves values returned while ensuring that threads don't access the results simultaneously
+            :param chunk: List of tuples, where each tuple contains a callable subscriber, its arguments, and keyword arguments.
             """
             for sub, args, kwargs in chunk:
                 result = sub(*args, **kwargs)

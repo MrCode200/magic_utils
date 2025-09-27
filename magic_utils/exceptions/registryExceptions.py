@@ -16,7 +16,7 @@ class RegistryError(Exception):
         super().__init__(message)
 
 
-class DuplicateError(RegistryError):
+class DuplicateKeyError(RegistryError):
     """
     Custom exception raised when there is an attempt to register a duplicate entry.
     Inherits from RegistryError and adds specific behavior for duplicate errors.
@@ -34,9 +34,7 @@ class DuplicateError(RegistryError):
         super().__init__(message, registry_name)
 
     def __str__(self):
-        if self.duplicate_item:
-            return f"{self.args[0]}: {self.duplicate_item} in {self.registry_name}"
-        return super().__str__()
+        return self.message
 
 
 class MissingKeyError(RegistryError):
@@ -52,11 +50,9 @@ class MissingKeyError(RegistryError):
         :param registry_name: The name of the registry where the duplicate item is registered (optional).
         :param missing_key: The name or identifier of the not registered item (optional).
         """
-        self.message = f"{registry_name}: Not registered item = {missing_key}" if message is None else message
-        self.not_registered_item = missing_key
+        self.message = f"{registry_name}: Missing key = {missing_key}" if message is None else message
+        self.missing_key = missing_key
         super().__init__(message, registry_name)
 
     def __str__(self):
-        if self.not_registered_item:
-            return f"{self.args[0]}: {self.not_registered_item} in {self.registry_name}"
-        return super().__str__()
+        return self.message
