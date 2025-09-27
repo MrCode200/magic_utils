@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "magic_utils"
-version = "0.3.0"
+version = "0.2.0"
 description = "Contains useful utilities classes and functions."
 authors = ["MrCode200 <navidyaghmaei@example.com>"]
 license = "MIT"  # Change as needed
