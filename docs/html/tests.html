@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>tests package &mdash; magic_utils 0.1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -21,6 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tests.test_magicLogger package" href="tests.test_magicLogger.html" />
     <link rel="prev" title="setup module" href="setup.html" /> 
 </head>
 
@@ -48,18 +47,24 @@
 <li class="toctree-l2"><a class="reference internal" href="magic_utils.html">magic_utils package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">tests package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_magicLogger.html">tests.test_magicLogger package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registryManager.html">tests.test_registryManager package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_tunnel.html">tests.test_tunnel package</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-tests.test_channel">tests.test_channel module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#tests.test_channel.subscriber_function_test_1"><code class="docutils literal notranslate"><span class="pre">subscriber_function_test_1()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tests.test_channel.subscriber_function_test_2"><code class="docutils literal notranslate"><span class="pre">subscriber_function_test_2()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tests.test_channel.test_clear"><code class="docutils literal notranslate"><span class="pre">test_clear()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tests.test_channel.test_eq"><code class="docutils literal notranslate"><span class="pre">test_eq()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tests.test_channel.test_notify_all"><code class="docutils literal notranslate"><span class="pre">test_notify_all()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tests.test_channel.test_notify_parallel"><code class="docutils literal notranslate"><span class="pre">test_notify_parallel()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tests.test_channel.test_notify_parallel_invalid_num_threads"><code class="docutils literal notranslate"><span class="pre">test_notify_parallel_invalid_num_threads()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tests.test_channel.test_notify_parallel_subscribers_exceeding_threads"><code class="docutils literal notranslate"><span class="pre">test_notify_parallel_subscribers_exceeding_threads()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tests.test_channel.test_subscribe"><code class="docutils literal notranslate"><span class="pre">test_subscribe()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tests.test_channel.test_unsubscribe"><code class="docutils literal notranslate"><span class="pre">test_unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-tests.test_eventManager">tests.test_eventManager module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tests.test_eventManager.subscriber_function_test_1"><code class="docutils literal notranslate"><span class="pre">subscriber_function_test_1()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tests.test_eventManager.subscriber_function_test_2"><code class="docutils literal notranslate"><span class="pre">subscriber_function_test_2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tests.test_eventManager.test_clear"><code class="docutils literal notranslate"><span class="pre">test_clear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tests.test_eventManager.test_eq"><code class="docutils literal notranslate"><span class="pre">test_eq()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tests.test_eventManager.test_notify_all"><code class="docutils literal notranslate"><span class="pre">test_notify_all()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tests.test_eventManager.test_notify_parallel"><code class="docutils literal notranslate"><span class="pre">test_notify_parallel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tests.test_eventManager.test_notify_parallel_invalid_num_threads"><code class="docutils literal notranslate"><span class="pre">test_notify_parallel_invalid_num_threads()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tests.test_eventManager.test_notify_parallel_subscribers_exceeding_threads"><code class="docutils literal notranslate"><span class="pre">test_notify_parallel_subscribers_exceeding_threads()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tests.test_eventManager.test_subscribe"><code class="docutils literal notranslate"><span class="pre">test_subscribe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tests.test_eventManager.test_unsubscribe"><code class="docutils literal notranslate"><span class="pre">test_unsubscribe()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-tests">Module contents</a></li>
@@ -96,59 +101,163 @@
              
   <section id="tests-package">
 <h1>tests package<a class="headerlink" href="#tests-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tests.test_magicLogger.html">tests.test_magicLogger package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_magicLogger.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_magicLogger.html#module-tests.test_magicLogger.conftest">tests.test_magicLogger.conftest module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.conftest.log_file_path"><code class="docutils literal notranslate"><span class="pre">log_file_path()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_magicLogger.html#module-tests.test_magicLogger.test_configuration_basic">tests.test_magicLogger.test_configuration_basic module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_custom_file_formatter"><code class="docutils literal notranslate"><span class="pre">test_custom_file_formatter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_custom_stream_formatter"><code class="docutils literal notranslate"><span class="pre">test_custom_stream_formatter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_setup_logger_clears_previous_handlers"><code class="docutils literal notranslate"><span class="pre">test_setup_logger_clears_previous_handlers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_setup_logger_creates_logger_with_name"><code class="docutils literal notranslate"><span class="pre">test_setup_logger_creates_logger_with_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_setup_logger_raises_for_conflicting_file_formatter"><code class="docutils literal notranslate"><span class="pre">test_setup_logger_raises_for_conflicting_file_formatter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_setup_logger_raises_for_conflicting_stream_formatter"><code class="docutils literal notranslate"><span class="pre">test_setup_logger_raises_for_conflicting_stream_formatter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_setup_logger_sets_handler_levels"><code class="docutils literal notranslate"><span class="pre">test_setup_logger_sets_handler_levels()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_setup_logger_uses_custom_timed_rotating_kwargs"><code class="docutils literal notranslate"><span class="pre">test_setup_logger_uses_custom_timed_rotating_kwargs()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_magicLogger.html#module-tests.test_magicLogger.test_formatters">tests.test_magicLogger.test_formatters module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_formatters.test_colored_formatter_outputs_ansi_and_formatted_fields"><code class="docutils literal notranslate"><span class="pre">test_colored_formatter_outputs_ansi_and_formatted_fields()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_formatters.test_formatters_include_extra_args"><code class="docutils literal notranslate"><span class="pre">test_formatters_include_extra_args()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_formatters.test_json_formatter_outputs_valid_json_and_keys"><code class="docutils literal notranslate"><span class="pre">test_json_formatter_outputs_valid_json_and_keys()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_magicLogger.html#module-tests.test_magicLogger.test_integration_logging_io">tests.test_magicLogger.test_integration_logging_io module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_integration_logging_io.test_logging_stream_handler"><code class="docutils literal notranslate"><span class="pre">test_logging_stream_handler()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_integration_logging_io.test_logging_to_file"><code class="docutils literal notranslate"><span class="pre">test_logging_to_file()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_magicLogger.html#module-tests.test_magicLogger">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests.test_registryManager.html">tests.test_registryManager package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.conftest">tests.test_registryManager.conftest module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.conftest.registry"><code class="docutils literal notranslate"><span class="pre">registry()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.constants">tests.test_registryManager.constants module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.helper">tests.test_registryManager.helper module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.helper.set_register_registry"><code class="docutils literal notranslate"><span class="pre">set_register_registry()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.test_crud">tests.test_registryManager.test_crud module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_crud.test_registry_get"><code class="docutils literal notranslate"><span class="pre">test_registry_get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_crud.test_registry_register"><code class="docutils literal notranslate"><span class="pre">test_registry_register()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_crud.test_registry_register_class"><code class="docutils literal notranslate"><span class="pre">test_registry_register_class()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_crud.test_registry_register_function"><code class="docutils literal notranslate"><span class="pre">test_registry_register_function()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_crud.test_registry_remove"><code class="docutils literal notranslate"><span class="pre">test_registry_remove()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_crud.test_registry_update"><code class="docutils literal notranslate"><span class="pre">test_registry_update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.test_dunder">tests.test_registryManager.test_dunder module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_dunder.registry"><code class="docutils literal notranslate"><span class="pre">registry()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_dunder.test_registry_contains"><code class="docutils literal notranslate"><span class="pre">test_registry_contains()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_dunder.test_registry_eq"><code class="docutils literal notranslate"><span class="pre">test_registry_eq()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_dunder.test_registry_len"><code class="docutils literal notranslate"><span class="pre">test_registry_len()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_dunder.test_registry_repr"><code class="docutils literal notranslate"><span class="pre">test_registry_repr()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.test_exceptions">tests.test_registryManager.test_exceptions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_exceptions.test_duplicate_key_error_str"><code class="docutils literal notranslate"><span class="pre">test_duplicate_key_error_str()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_exceptions.test_registry_duplicate_key_exception"><code class="docutils literal notranslate"><span class="pre">test_registry_duplicate_key_exception()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_exceptions.test_registry_missing_key_exception"><code class="docutils literal notranslate"><span class="pre">test_registry_missing_key_exception()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_exceptions.test_registry_raise_exception_false"><code class="docutils literal notranslate"><span class="pre">test_registry_raise_exception_false()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.test_logging">tests.test_registryManager.test_logging module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_logging.registry"><code class="docutils literal notranslate"><span class="pre">registry()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_logging.reset_registry"><code class="docutils literal notranslate"><span class="pre">reset_registry()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_logging.test_registry_logging_get"><code class="docutils literal notranslate"><span class="pre">test_registry_logging_get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_logging.test_registry_logging_register"><code class="docutils literal notranslate"><span class="pre">test_registry_logging_register()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_logging.test_registry_logging_remove"><code class="docutils literal notranslate"><span class="pre">test_registry_logging_remove()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_logging.test_registry_logging_update"><code class="docutils literal notranslate"><span class="pre">test_registry_logging_update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.test_other">tests.test_registryManager.test_other module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_other.registry"><code class="docutils literal notranslate"><span class="pre">registry()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_other.test_registry_alias"><code class="docutils literal notranslate"><span class="pre">test_registry_alias()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_other.test_registry_reset"><code class="docutils literal notranslate"><span class="pre">test_registry_reset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_other.test_registry_singleton"><code class="docutils literal notranslate"><span class="pre">test_registry_singleton()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests.test_tunnel.html">tests.test_tunnel package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_tunnel.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_tunnel.html#module-tests.test_tunnel.test_tunnelMole">tests.test_tunnel.test_tunnelMole module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_tunnel.html#tests.test_tunnel.test_tunnelMole.mock_popen"><code class="docutils literal notranslate"><span class="pre">mock_popen()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_tunnel.html#tests.test_tunnel.test_tunnelMole.test_context_manager"><code class="docutils literal notranslate"><span class="pre">test_context_manager()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_tunnel.html#tests.test_tunnel.test_tunnelMole.test_tunnel_exceptions"><code class="docutils literal notranslate"><span class="pre">test_tunnel_exceptions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_tunnel.html#tests.test_tunnel.test_tunnelMole.test_tunnel_start_and_stop"><code class="docutils literal notranslate"><span class="pre">test_tunnel_start_and_stop()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_tunnel.html#module-tests.test_tunnel">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
-<section id="module-tests.test_channel">
-<span id="tests-test-channel-module"></span><h2>tests.test_channel module<a class="headerlink" href="#module-tests.test_channel" title="Link to this heading"></a></h2>
+<section id="module-tests.test_eventManager">
+<span id="tests-test-eventmanager-module"></span><h2>tests.test_eventManager module<a class="headerlink" href="#module-tests.test_eventManager" title="Link to this heading"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="tests.test_channel.subscriber_function_test_1">
-<span class="sig-prename descclassname"><span class="pre">tests.test_channel.</span></span><span class="sig-name descname"><span class="pre">subscriber_function_test_1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwarg1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_channel.html#subscriber_function_test_1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_channel.subscriber_function_test_1" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_eventManager.subscriber_function_test_1">
+<span class="sig-prename descclassname"><span class="pre">tests.test_eventManager.</span></span><span class="sig-name descname"><span class="pre">subscriber_function_test_1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwarg1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_eventManager.html#subscriber_function_test_1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_eventManager.subscriber_function_test_1" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="tests.test_channel.subscriber_function_test_2">
-<span class="sig-prename descclassname"><span class="pre">tests.test_channel.</span></span><span class="sig-name descname"><span class="pre">subscriber_function_test_2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwarg1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_channel.html#subscriber_function_test_2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_channel.subscriber_function_test_2" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_eventManager.subscriber_function_test_2">
+<span class="sig-prename descclassname"><span class="pre">tests.test_eventManager.</span></span><span class="sig-name descname"><span class="pre">subscriber_function_test_2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwarg1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_eventManager.html#subscriber_function_test_2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_eventManager.subscriber_function_test_2" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="tests.test_channel.test_clear">
-<span class="sig-prename descclassname"><span class="pre">tests.test_channel.</span></span><span class="sig-name descname"><span class="pre">test_clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_channel.html#test_clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_channel.test_clear" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_eventManager.test_clear">
+<span class="sig-prename descclassname"><span class="pre">tests.test_eventManager.</span></span><span class="sig-name descname"><span class="pre">test_clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_eventManager.html#test_clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_eventManager.test_clear" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="tests.test_channel.test_eq">
-<span class="sig-prename descclassname"><span class="pre">tests.test_channel.</span></span><span class="sig-name descname"><span class="pre">test_eq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_channel.html#test_eq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_channel.test_eq" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_eventManager.test_eq">
+<span class="sig-prename descclassname"><span class="pre">tests.test_eventManager.</span></span><span class="sig-name descname"><span class="pre">test_eq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_eventManager.html#test_eq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_eventManager.test_eq" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="tests.test_channel.test_notify_all">
-<span class="sig-prename descclassname"><span class="pre">tests.test_channel.</span></span><span class="sig-name descname"><span class="pre">test_notify_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_channel.html#test_notify_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_channel.test_notify_all" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_eventManager.test_notify_all">
+<span class="sig-prename descclassname"><span class="pre">tests.test_eventManager.</span></span><span class="sig-name descname"><span class="pre">test_notify_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_eventManager.html#test_notify_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_eventManager.test_notify_all" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="tests.test_channel.test_notify_parallel">
-<span class="sig-prename descclassname"><span class="pre">tests.test_channel.</span></span><span class="sig-name descname"><span class="pre">test_notify_parallel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_channel.html#test_notify_parallel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_channel.test_notify_parallel" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_eventManager.test_notify_parallel">
+<span class="sig-prename descclassname"><span class="pre">tests.test_eventManager.</span></span><span class="sig-name descname"><span class="pre">test_notify_parallel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_eventManager.html#test_notify_parallel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_eventManager.test_notify_parallel" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="tests.test_channel.test_notify_parallel_invalid_num_threads">
-<span class="sig-prename descclassname"><span class="pre">tests.test_channel.</span></span><span class="sig-name descname"><span class="pre">test_notify_parallel_invalid_num_threads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_channel.html#test_notify_parallel_invalid_num_threads"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_channel.test_notify_parallel_invalid_num_threads" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_eventManager.test_notify_parallel_invalid_num_threads">
+<span class="sig-prename descclassname"><span class="pre">tests.test_eventManager.</span></span><span class="sig-name descname"><span class="pre">test_notify_parallel_invalid_num_threads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_eventManager.html#test_notify_parallel_invalid_num_threads"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_eventManager.test_notify_parallel_invalid_num_threads" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="tests.test_channel.test_notify_parallel_subscribers_exceeding_threads">
-<span class="sig-prename descclassname"><span class="pre">tests.test_channel.</span></span><span class="sig-name descname"><span class="pre">test_notify_parallel_subscribers_exceeding_threads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_channel.html#test_notify_parallel_subscribers_exceeding_threads"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_channel.test_notify_parallel_subscribers_exceeding_threads" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_eventManager.test_notify_parallel_subscribers_exceeding_threads">
+<span class="sig-prename descclassname"><span class="pre">tests.test_eventManager.</span></span><span class="sig-name descname"><span class="pre">test_notify_parallel_subscribers_exceeding_threads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_eventManager.html#test_notify_parallel_subscribers_exceeding_threads"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_eventManager.test_notify_parallel_subscribers_exceeding_threads" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="tests.test_channel.test_subscribe">
-<span class="sig-prename descclassname"><span class="pre">tests.test_channel.</span></span><span class="sig-name descname"><span class="pre">test_subscribe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_channel.html#test_subscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_channel.test_subscribe" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_eventManager.test_subscribe">
+<span class="sig-prename descclassname"><span class="pre">tests.test_eventManager.</span></span><span class="sig-name descname"><span class="pre">test_subscribe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_eventManager.html#test_subscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_eventManager.test_subscribe" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="tests.test_channel.test_unsubscribe">
-<span class="sig-prename descclassname"><span class="pre">tests.test_channel.</span></span><span class="sig-name descname"><span class="pre">test_unsubscribe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_channel.html#test_unsubscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_channel.test_unsubscribe" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_eventManager.test_unsubscribe">
+<span class="sig-prename descclassname"><span class="pre">tests.test_eventManager.</span></span><span class="sig-name descname"><span class="pre">test_unsubscribe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_eventManager.html#test_unsubscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_eventManager.test_unsubscribe" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </section>
@@ -162,6 +271,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="setup.html" class="btn btn-neutral float-left" title="setup module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tests.test_magicLogger.html" class="btn btn-neutral float-right" title="tests.test_magicLogger package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

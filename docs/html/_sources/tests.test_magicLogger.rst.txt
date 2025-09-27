@@ -1,0 +1,45 @@
+tests.test\_magicLogger package
+===============================
+
+Submodules
+----------
+
+tests.test\_magicLogger.conftest module
+---------------------------------------
+
+.. automodule:: tests.test_magicLogger.conftest
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_magicLogger.test\_configuration\_basic module
+---------------------------------------------------------
+
+.. automodule:: tests.test_magicLogger.test_configuration_basic
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_magicLogger.test\_formatters module
+-----------------------------------------------
+
+.. automodule:: tests.test_magicLogger.test_formatters
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_magicLogger.test\_integration\_logging\_io module
+-------------------------------------------------------------
+
+.. automodule:: tests.test_magicLogger.test_integration_logging_io
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: tests.test_magicLogger
+   :members:
+   :undoc-members:
+   :show-inheritance:

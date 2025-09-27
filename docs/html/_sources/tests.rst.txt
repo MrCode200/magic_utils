@@ -1,13 +1,23 @@
 tests package
 =============
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   tests.test_magicLogger
+   tests.test_registryManager
+   tests.test_tunnel
+
 Submodules
 ----------
 
-tests.test\_channel module
---------------------------
+tests.test\_eventManager module
+-------------------------------
 
-.. automodule:: tests.test_channel
+.. automodule:: tests.test_eventManager
    :members:
    :undoc-members:
    :show-inheritance:

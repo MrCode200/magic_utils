@@ -1,0 +1,21 @@
+magic\_utils.tunnel package
+===========================
+
+Submodules
+----------
+
+magic\_utils.tunnel.tunnelmole module
+-------------------------------------
+
+.. automodule:: magic_utils.tunnel.tunnelmole
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: magic_utils.tunnel
+   :members:
+   :undoc-members:
+   :show-inheritance:

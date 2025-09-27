@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>magic_utils package &mdash; magic_utils 0.1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -21,7 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="setup module" href="setup.html" />
+    <link rel="next" title="magic_utils.exceptions package" href="magic_utils.exceptions.html" />
     <link rel="prev" title="magic_utils" href="modules.html" /> 
 </head>
 
@@ -47,15 +45,27 @@
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">magic_utils</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">magic_utils package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="magic_utils.exceptions.html">magic_utils.exceptions package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="magic_utils.magicLogger.html">magic_utils.magicLogger package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="magic_utils.tunnel.html">magic_utils.tunnel package</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-magic_utils.eventmanager">magic_utils.eventmanager module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-magic_utils.eventManager">magic_utils.eventManager module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#channel-module">channel_module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#usage-example">Usage example:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#magic_utils.eventmanager.EventManager"><code class="docutils literal notranslate"><span class="pre">EventManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#magic_utils.eventManager.EventManager"><code class="docutils literal notranslate"><span class="pre">EventManager</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-magic_utils.registryManager">magic_utils.registryManager module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#magic_utils.registryManager.Registry"><code class="docutils literal notranslate"><span class="pre">Registry</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-magic_utils">Module contents</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#magic_utils.EventManager"><code class="docutils literal notranslate"><span class="pre">EventManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#magic_utils.Registry"><code class="docutils literal notranslate"><span class="pre">Registry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#magic_utils.setup_logger"><code class="docutils literal notranslate"><span class="pre">setup_logger()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -93,11 +103,63 @@
              
   <section id="magic-utils-package">
 <h1>magic_utils package<a class="headerlink" href="#magic-utils-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="magic_utils.exceptions.html">magic_utils.exceptions package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="magic_utils.exceptions.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="magic_utils.exceptions.html#module-magic_utils.exceptions.registryExceptions">magic_utils.exceptions.registryExceptions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="magic_utils.exceptions.html#magic_utils.exceptions.registryExceptions.DuplicateKeyError"><code class="docutils literal notranslate"><span class="pre">DuplicateKeyError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="magic_utils.exceptions.html#magic_utils.exceptions.registryExceptions.MissingKeyError"><code class="docutils literal notranslate"><span class="pre">MissingKeyError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="magic_utils.exceptions.html#magic_utils.exceptions.registryExceptions.RegistryError"><code class="docutils literal notranslate"><span class="pre">RegistryError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="magic_utils.exceptions.html#module-magic_utils.exceptions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="magic_utils.magicLogger.html">magic_utils.magicLogger package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="magic_utils.magicLogger.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="magic_utils.magicLogger.html#module-magic_utils.magicLogger.loggingFormatter">magic_utils.magicLogger.loggingFormatter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="magic_utils.magicLogger.html#magic_utils.magicLogger.loggingFormatter.ColoredFormatter"><code class="docutils literal notranslate"><span class="pre">ColoredFormatter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="magic_utils.magicLogger.html#magic_utils.magicLogger.loggingFormatter.ColoredFormatter.format"><code class="docutils literal notranslate"><span class="pre">ColoredFormatter.format()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="magic_utils.magicLogger.html#magic_utils.magicLogger.loggingFormatter.JsonFormatter"><code class="docutils literal notranslate"><span class="pre">JsonFormatter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="magic_utils.magicLogger.html#magic_utils.magicLogger.loggingFormatter.JsonFormatter.format"><code class="docutils literal notranslate"><span class="pre">JsonFormatter.format()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="magic_utils.magicLogger.html#module-magic_utils.magicLogger.loggingManager">magic_utils.magicLogger.loggingManager module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="magic_utils.magicLogger.html#magic_utils.magicLogger.loggingManager.setup_logger"><code class="docutils literal notranslate"><span class="pre">setup_logger()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="magic_utils.magicLogger.html#module-magic_utils.magicLogger">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="magic_utils.tunnel.html">magic_utils.tunnel package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="magic_utils.tunnel.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="magic_utils.tunnel.html#module-magic_utils.tunnel.tunnelmole">magic_utils.tunnel.tunnelmole module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="magic_utils.tunnel.html#magic_utils.tunnel.tunnelmole.TunnelMole"><code class="docutils literal notranslate"><span class="pre">TunnelMole</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="magic_utils.tunnel.html#magic_utils.tunnel.tunnelmole.TunnelMole.is_running"><code class="docutils literal notranslate"><span class="pre">TunnelMole.is_running()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="magic_utils.tunnel.html#magic_utils.tunnel.tunnelmole.TunnelMole.start"><code class="docutils literal notranslate"><span class="pre">TunnelMole.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="magic_utils.tunnel.html#magic_utils.tunnel.tunnelmole.TunnelMole.stop"><code class="docutils literal notranslate"><span class="pre">TunnelMole.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="magic_utils.tunnel.html#module-magic_utils.tunnel">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
-<section id="module-magic_utils.eventmanager">
-<span id="magic-utils-eventmanager-module"></span><h2>magic_utils.eventmanager module<a class="headerlink" href="#module-magic_utils.eventmanager" title="Link to this heading"></a></h2>
+<section id="module-magic_utils.eventManager">
+<span id="magic-utils-eventmanager-module"></span><h2>magic_utils.eventManager module<a class="headerlink" href="#module-magic_utils.eventManager" title="Link to this heading"></a></h2>
 <section id="channel-module">
 <h3>channel_module<a class="headerlink" href="#channel-module" title="Link to this heading"></a></h3>
 <p>This module defines the <code class="docutils literal notranslate"><span class="pre">Channel</span></code> class, which facilitates the management of subscribers and the notification process.</p>
@@ -127,8 +189,8 @@ ch.notify_parallel(num_threads=2)</p>
 </div></blockquote>
 </section>
 <dl class="py class">
-<dt class="sig sig-object py" id="magic_utils.eventmanager.EventManager">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">magic_utils.eventmanager.</span></span><span class="sig-name descname"><span class="pre">EventManager</span></span><a class="reference internal" href="_modules/magic_utils/eventmanager.html#EventManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.eventmanager.EventManager" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="magic_utils.eventManager.EventManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">magic_utils.eventManager.</span></span><span class="sig-name descname"><span class="pre">EventManager</span></span><a class="reference internal" href="_modules/magic_utils/eventManager.html#EventManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.eventManager.EventManager" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A class to manage subscribers and their notifications.</p>
 <p>The <cite>EventManager</cite> class manages a list of subscribers and supports adding, removing, and notifying these subscribers. Subscribers can be notified sequentially with <cite>notify_all</cite> or in parallel with <cite>notify_parallel</cite>.</p>
@@ -138,14 +200,14 @@ ch.notify_parallel(num_threads=2)</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="magic_utils.eventmanager.EventManager.clear">
-<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/eventmanager.html#EventManager.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.eventmanager.EventManager.clear" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="magic_utils.eventManager.EventManager.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/eventManager.html#EventManager.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.eventManager.EventManager.clear" title="Link to this definition"></a></dt>
 <dd><p>Remove all subscribers from the EventManager.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="magic_utils.eventmanager.EventManager.notify_all">
-<span class="sig-name descname"><span class="pre">notify_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/magic_utils/eventmanager.html#EventManager.notify_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.eventmanager.EventManager.notify_all" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="magic_utils.eventManager.EventManager.notify_all">
+<span class="sig-name descname"><span class="pre">notify_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/magic_utils/eventManager.html#EventManager.notify_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.eventManager.EventManager.notify_all" title="Link to this definition"></a></dt>
 <dd><p>Notify all subscribers sequentially.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -155,8 +217,8 @@ ch.notify_parallel(num_threads=2)</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="magic_utils.eventmanager.EventManager.notify_parallel">
-<span class="sig-name descname"><span class="pre">notify_parallel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/magic_utils/eventmanager.html#EventManager.notify_parallel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.eventmanager.EventManager.notify_parallel" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="magic_utils.eventManager.EventManager.notify_parallel">
+<span class="sig-name descname"><span class="pre">notify_parallel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/magic_utils/eventManager.html#EventManager.notify_parallel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.eventManager.EventManager.notify_parallel" title="Link to this definition"></a></dt>
 <dd><p>Notify all subscribers in parallel using the specified number of threads.</p>
 <p>If the specified number of threads exceeds the number of subscribers,
 a warning will be issued and the number of threads will be automatically
@@ -176,8 +238,8 @@ The order of the items represents the order in which they were called.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="magic_utils.eventmanager.EventManager.subscribe">
-<span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscriber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">subscriber_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subscriber_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/eventmanager.html#EventManager.subscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.eventmanager.EventManager.subscribe" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="magic_utils.eventManager.EventManager.subscribe">
+<span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscriber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">subscriber_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subscriber_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/eventManager.html#EventManager.subscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.eventManager.EventManager.subscribe" title="Link to this definition"></a></dt>
 <dd><p>Add a new subscriber to the EventManager.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -191,8 +253,8 @@ The order of the items represents the order in which they were called.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="magic_utils.eventmanager.EventManager.unsubscribe">
-<span class="sig-name descname"><span class="pre">unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscriber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/eventmanager.html#EventManager.unsubscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.eventmanager.EventManager.unsubscribe" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="magic_utils.eventManager.EventManager.unsubscribe">
+<span class="sig-name descname"><span class="pre">unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscriber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/eventManager.html#EventManager.unsubscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.eventManager.EventManager.unsubscribe" title="Link to this definition"></a></dt>
 <dd><p>Remove a subscriber from the EventManager.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -204,11 +266,145 @@ The order of the items represents the order in which they were called.</p>
 </dd></dl>
 
 </section>
+<section id="module-magic_utils.registryManager">
+<span id="magic-utils-registrymanager-module"></span><h2>magic_utils.registryManager module<a class="headerlink" href="#module-magic_utils.registryManager" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="magic_utils.registryManager.Registry">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">magic_utils.registryManager.</span></span><span class="sig-name descname"><span class="pre">Registry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registry_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'BaseRegistry'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.registryManager.Registry" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.registryManager.Registry.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.registryManager.Registry.get" title="Link to this definition"></a></dt>
+<dd><p>Retrieve an item from the registry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> – The key to retrieve.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value associated with the key, or the entire registry if <cite>key</cite> is <cite>None</cite>.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotRegisteredError</strong> – If the key is not registered and exceptions are enabled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.registryManager.Registry.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry.register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.registryManager.Registry.register" title="Link to this definition"></a></dt>
+<dd><p>Register one or more keys with a specified value.
+Skips registration if a key is already registered completely.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keys</strong> – A single key or a list of keys(aliases) to register.</p></li>
+<li><p><strong>value</strong> – The value to associate with the given key(s).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>DuplicateError</strong> – If a key is already registered and exceptions are enabled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.registryManager.Registry.register_class">
+<span class="sig-name descname"><span class="pre">register_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">object</span></span></span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry.register_class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.registryManager.Registry.register_class" title="Link to this definition"></a></dt>
+<dd><p>A decorator to register a class to the registry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>keys</strong> – A single key or a list of keys(aliases) to register the class with.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The decorated class.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.registryManager.Registry.register_function">
+<span class="sig-name descname"><span class="pre">register_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry.register_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.registryManager.Registry.register_function" title="Link to this definition"></a></dt>
+<dd><p>A decorator to register a function itself to the registry.
+This registration happens only once when the function is first defined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>keys</strong> – A single key or a list of keys(aliases) to register the function with.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The decorated function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="magic_utils.registryManager.Registry.registry">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">registry</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#magic_utils.registryManager.Registry.registry" title="Link to this definition"></a></dt>
+<dd><p>Access the underlying registry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dictionary containing all registered items.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict[Hashable, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.registryManager.Registry.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry.remove"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.registryManager.Registry.remove" title="Link to this definition"></a></dt>
+<dd><p>Remove an item from the registry by key or value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – The key to remove. If <cite>None</cite>, removal is based on the value.</p></li>
+<li><p><strong>value</strong> – The value to remove. If <cite>None</cite>, removal is based on the key.</p></li>
+<li><p><strong>all</strong> – Whether to remove all matches. If <cite>True</cite>, removes all matches. Only needed if removed by value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If both <cite>key</cite> and <cite>value</cite> are <cite>None</cite>.</p></li>
+<li><p><strong>NotRegisteredError</strong> – If the key or value is not found and exceptions are enabled.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.registryManager.Registry.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.registryManager.Registry.reset" title="Link to this definition"></a></dt>
+<dd><p>Clear all items from the registry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.registryManager.Registry.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.registryManager.Registry.update" title="Link to this definition"></a></dt>
+<dd><p>Update an item in the registry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – The key to remove. If <cite>None</cite>, removal is based on the value.</p></li>
+<li><p><strong>value</strong> – The value to remove. If <cite>None</cite>, removal is based on the key.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 <section id="module-magic_utils">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-magic_utils" title="Link to this heading"></a></h2>
+<p>Magic Utils - A collection of useful utility classes and functions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="magic_utils.EventManager">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">magic_utils.</span></span><span class="sig-name descname"><span class="pre">EventManager</span></span><a class="reference internal" href="_modules/magic_utils/eventmanager.html#EventManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.EventManager" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">magic_utils.</span></span><span class="sig-name descname"><span class="pre">EventManager</span></span><a class="reference internal" href="_modules/magic_utils/eventManager.html#EventManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.EventManager" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A class to manage subscribers and their notifications.</p>
 <p>The <cite>EventManager</cite> class manages a list of subscribers and supports adding, removing, and notifying these subscribers. Subscribers can be notified sequentially with <cite>notify_all</cite> or in parallel with <cite>notify_parallel</cite>.</p>
@@ -219,13 +415,13 @@ The order of the items represents the order in which they were called.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="magic_utils.EventManager.clear">
-<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/eventmanager.html#EventManager.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.EventManager.clear" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/eventManager.html#EventManager.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.EventManager.clear" title="Link to this definition"></a></dt>
 <dd><p>Remove all subscribers from the EventManager.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="magic_utils.EventManager.notify_all">
-<span class="sig-name descname"><span class="pre">notify_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/magic_utils/eventmanager.html#EventManager.notify_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.EventManager.notify_all" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">notify_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/magic_utils/eventManager.html#EventManager.notify_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.EventManager.notify_all" title="Link to this definition"></a></dt>
 <dd><p>Notify all subscribers sequentially.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -236,7 +432,7 @@ The order of the items represents the order in which they were called.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="magic_utils.EventManager.notify_parallel">
-<span class="sig-name descname"><span class="pre">notify_parallel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/magic_utils/eventmanager.html#EventManager.notify_parallel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.EventManager.notify_parallel" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">notify_parallel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/magic_utils/eventManager.html#EventManager.notify_parallel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.EventManager.notify_parallel" title="Link to this definition"></a></dt>
 <dd><p>Notify all subscribers in parallel using the specified number of threads.</p>
 <p>If the specified number of threads exceeds the number of subscribers,
 a warning will be issued and the number of threads will be automatically
@@ -257,7 +453,7 @@ The order of the items represents the order in which they were called.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="magic_utils.EventManager.subscribe">
-<span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscriber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">subscriber_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subscriber_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/eventmanager.html#EventManager.subscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.EventManager.subscribe" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscriber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">subscriber_args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subscriber_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/eventManager.html#EventManager.subscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.EventManager.subscribe" title="Link to this definition"></a></dt>
 <dd><p>Add a new subscriber to the EventManager.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -272,7 +468,7 @@ The order of the items represents the order in which they were called.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="magic_utils.EventManager.unsubscribe">
-<span class="sig-name descname"><span class="pre">unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscriber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/eventmanager.html#EventManager.unsubscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.EventManager.unsubscribe" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscriber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/eventManager.html#EventManager.unsubscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.EventManager.unsubscribe" title="Link to this definition"></a></dt>
 <dd><p>Remove a subscriber from the EventManager.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -283,6 +479,172 @@ The order of the items represents the order in which they were called.</p>
 
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="magic_utils.Registry">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">magic_utils.</span></span><span class="sig-name descname"><span class="pre">Registry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registry_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'BaseRegistry'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.Registry" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.Registry.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.Registry.get" title="Link to this definition"></a></dt>
+<dd><p>Retrieve an item from the registry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> – The key to retrieve.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value associated with the key, or the entire registry if <cite>key</cite> is <cite>None</cite>.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotRegisteredError</strong> – If the key is not registered and exceptions are enabled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.Registry.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry.register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.Registry.register" title="Link to this definition"></a></dt>
+<dd><p>Register one or more keys with a specified value.
+Skips registration if a key is already registered completely.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keys</strong> – A single key or a list of keys(aliases) to register.</p></li>
+<li><p><strong>value</strong> – The value to associate with the given key(s).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>DuplicateError</strong> – If a key is already registered and exceptions are enabled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.Registry.register_class">
+<span class="sig-name descname"><span class="pre">register_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">object</span></span></span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry.register_class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.Registry.register_class" title="Link to this definition"></a></dt>
+<dd><p>A decorator to register a class to the registry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>keys</strong> – A single key or a list of keys(aliases) to register the class with.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The decorated class.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.Registry.register_function">
+<span class="sig-name descname"><span class="pre">register_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry.register_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.Registry.register_function" title="Link to this definition"></a></dt>
+<dd><p>A decorator to register a function itself to the registry.
+This registration happens only once when the function is first defined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>keys</strong> – A single key or a list of keys(aliases) to register the function with.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The decorated function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="magic_utils.Registry.registry">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">registry</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#magic_utils.Registry.registry" title="Link to this definition"></a></dt>
+<dd><p>Access the underlying registry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dictionary containing all registered items.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict[Hashable, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.Registry.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry.remove"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.Registry.remove" title="Link to this definition"></a></dt>
+<dd><p>Remove an item from the registry by key or value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – The key to remove. If <cite>None</cite>, removal is based on the value.</p></li>
+<li><p><strong>value</strong> – The value to remove. If <cite>None</cite>, removal is based on the key.</p></li>
+<li><p><strong>all</strong> – Whether to remove all matches. If <cite>True</cite>, removes all matches. Only needed if removed by value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If both <cite>key</cite> and <cite>value</cite> are <cite>None</cite>.</p></li>
+<li><p><strong>NotRegisteredError</strong> – If the key or value is not found and exceptions are enabled.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.Registry.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.Registry.reset" title="Link to this definition"></a></dt>
+<dd><p>Clear all items from the registry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magic_utils.Registry.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/magic_utils/registryManager.html#Registry.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.Registry.update" title="Link to this definition"></a></dt>
+<dd><p>Update an item in the registry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – The key to remove. If <cite>None</cite>, removal is based on the value.</p></li>
+<li><p><strong>value</strong> – The value to remove. If <cite>None</cite>, removal is based on the key.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="magic_utils.setup_logger">
+<span class="sig-prename descclassname"><span class="pre">magic_utils.</span></span><span class="sig-name descname"><span class="pre">setup_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stream_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stream_in_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stream_formatter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Formatter</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_formatter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Formatter</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_in_json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_log_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_previous_handlers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timed_rotating_file_handler_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Logger</span></span></span><a class="reference internal" href="_modules/magic_utils/magicLogger/loggingManager.html#setup_logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magic_utils.setup_logger" title="Link to this definition"></a></dt>
+<dd><p>Configure and initialize a logger with stream and timed rotating file handlers.</p>
+<dl class="simple">
+<dt>Note:</dt><dd><ul class="simple">
+<li><p>logger.propagate = False</p></li>
+<li><p>removes previous handlers from logger</p></li>
+<li><p>Default format (this isn’t the colored format): [%(asctime)s | %(levelname)s] [%(filename)s | lineno%(lineno)d | %(funcName)s] =&gt; %(message)s</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logger_name</strong> – The name of the logger to configure.</p></li>
+<li><p><strong>log_file_path</strong> – The filename where logs will be written, with daily rotation. (e.g., ‘/logs/app.jsonl’)</p></li>
+<li><p><strong>stream_level</strong> – The log level for the stream handler (e.g., logging.DEBUG, logging.INFO) Defaults to DEBUG.</p></li>
+<li><p><strong>log_level</strong> – The log level for the file handler (e.g., logging.DEBUG, logging.INFO) Defaults to DEBUG.</p></li>
+<li><p><strong>stream_in_color</strong> – If True, logs to stdout will use colored formatting. Defaults to True.</p></li>
+<li><p><strong>stream_formatter</strong> – The formatter to use for the stream handler. Defaults to ColoredFormatter if stream_in_color is True, otherwise uses the default formatter.</p></li>
+<li><p><strong>file_formatter</strong> – The formatter to use for the file handler. Defaults to JsonFormatter if log_in_json is True, otherwise uses the default formatter.</p></li>
+<li><p><strong>log_in_json</strong> – If True, logs to file will be written in JSON format. Defaults to True.</p></li>
+<li><p><strong>remove_previous_handlers</strong> – If True, removes previous handlers from the logger. Defaults to True.</p></li>
+<li><p><strong>extra_log_args</strong> – List of extra attribute keys to include in the logs (e.g., [‘arg1’, ‘arg2’]).
+These keys will be added to the colored formatter output if present.</p></li>
+<li><p><strong>timed_rotating_file_handler_kwargs</strong> – Kwargs to pass to the TimedRotatingFileHandler constructor.
+Overwrites all the default kwargs {‘filename’: log_file_name, ‘when’: ‘midnight’, ‘interval’: 1, ‘backupCount’: 3}</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 </section>
 
@@ -291,7 +653,7 @@ The order of the items represents the order in which they were called.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="modules.html" class="btn btn-neutral float-left" title="magic_utils" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="setup.html" class="btn btn-neutral float-right" title="setup module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="magic_utils.exceptions.html" class="btn btn-neutral float-right" title="magic_utils.exceptions package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
