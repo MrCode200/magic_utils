@@ -1,7 +1,7 @@
 """Magic Utils - A collection of useful utility classes and functions."""
 
 __title__ = "magic_utils"
-__version__ = "0.2.4"
+__version__ = "0.2.0"
 __author__ = "MrCode200"
 __license__ = "MIT"
 
