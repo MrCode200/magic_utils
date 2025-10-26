@@ -91,7 +91,8 @@ class Registry:
         def decorator(func):
             nonlocal has_registered
             if not has_registered:
-                self.register(keys, func)
+                k = func.__name__ if not keys else keys
+                self.register(k, func)
                 has_registered = True
 
             @wraps(func)
@@ -110,7 +111,8 @@ class Registry:
         :return: The decorated class.
         """
         def decorator(cls):
-            self.register(keys, cls)
+            k = cls.__name__ if not keys else keys
+            self.register(k, cls)
             return cls
         return decorator
 

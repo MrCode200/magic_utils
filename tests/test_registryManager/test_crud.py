@@ -13,10 +13,7 @@ def test_registry_register_class(registry):
     class Test:
         value: int = 1
 
-        def __init__(self):
-            pass
-
-    assert registry['test'].value == 1
+    assert registry['test'] == Test
 
 def test_registry_register_function(registry):
     @registry.register_function('test')

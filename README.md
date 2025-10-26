@@ -60,7 +60,9 @@ Or
 ## Road Map
 
 1. [x] Generate documentation
-2. [ ] Add more utility 
+2. [X] Add TunnelMole
+3. [X] Register Function should on default use function name as key (same for class)
+4. [ ] Registry should have ability to delete by all aliases
 
 
 ## Call for Contributions
