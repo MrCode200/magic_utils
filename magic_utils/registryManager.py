@@ -78,7 +78,7 @@ class Registry:
             self._registry[key] = value
             self.logger.debug(f"{self.registry_name}: Registered `{key}` to registry") if self.logger else None
 
-    def register_function(self, keys: Union[Hashable, list[Hashable]]) -> Any:
+    def register_function(self, keys: Union[Hashable, list[Hashable], None] = None) -> Any:
         """
         A decorator to register a function itself to the registry.
         This registration happens only once when the function is first defined.
@@ -91,7 +91,7 @@ class Registry:
         def decorator(func):
             nonlocal has_registered
             if not has_registered:
-                k = func.__name__ if not keys else keys
+                k = func.__name__ if keys is None else keys
                 self.register(k, func)
                 has_registered = True
 
@@ -103,7 +103,7 @@ class Registry:
 
         return decorator
 
-    def register_class(self, keys: Union[Hashable, list[Hashable]]) -> Union[None, object]:
+    def register_class(self, keys: Union[Hashable, list[Hashable], None] = None) -> Union[None, object]:
         """
         A decorator to register a class to the registry.
 
@@ -111,7 +111,7 @@ class Registry:
         :return: The decorated class.
         """
         def decorator(cls):
-            k = cls.__name__ if not keys else keys
+            k = cls.__name__ if keys is None else keys
             self.register(k, cls)
             return cls
         return decorator
