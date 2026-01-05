@@ -4,7 +4,7 @@ from logging import Formatter
 from logging import StreamHandler
 from logging import getLogger
 from logging.handlers import TimedRotatingFileHandler
-from typing import Optional
+from typing import Optional, Literal
 
 from .loggingFormatter import ColoredFormatter, JsonFormatter
 
@@ -15,8 +15,8 @@ def setup_logger(
         stream_level: int = DEBUG,
         log_level: int = DEBUG,
         stream_in_color: bool = True,
-        stream_formatter: Optional[Formatter] = None,
-        file_formatter: Optional[Formatter] = None,
+        stream_formatter: Optional[Formatter | Literal['default']] = None, # TODO: test Literal['default'] vs None
+        file_formatter: Optional[Formatter | Literal['default']] = None, # TODO: test Literal['default']
         log_in_json: bool = True,
         extra_log_args: list[str] = None,
         remove_previous_handlers: bool = True,
@@ -35,8 +35,10 @@ def setup_logger(
        :param stream_level: The log level for the stream handler (e.g., logging.DEBUG, logging.INFO) Defaults to DEBUG.
        :param log_level: The log level for the file handler (e.g., logging.DEBUG, logging.INFO) Defaults to DEBUG.
        :param stream_in_color: If True, logs to stdout will use colored formatting. Defaults to True.
-       :param stream_formatter: The formatter to use for the stream handler. Defaults to ColoredFormatter if stream_in_color is True, otherwise uses the default formatter.
-       :param file_formatter: The formatter to use for the file handler. Defaults to JsonFormatter if log_in_json is True, otherwise uses the default formatter.
+       :param stream_formatter: The formatter to use for the stream handler. Defaults to ColoredFormatter if stream_in_color is True,
+       otherwise uses the default formatter when 'default' is used. To disable the stream Handler set it to None.
+       :param file_formatter: The formatter to use for the file handler. Defaults to JsonFormatter if log_in_json is True,
+       otherwise uses the default formatter when 'default' is used. To disable the stream Handler set it to None.
        :param log_in_json: If True, logs to file will be written in JSON format. Defaults to True.
        :param remove_previous_handlers: If True, removes previous handlers from the logger. Defaults to True.
        :param extra_log_args: List of extra attribute keys to include in the logs (e.g., ['arg1', 'arg2']).
@@ -55,38 +57,40 @@ def setup_logger(
     logger.handlers.clear() if remove_previous_handlers else None
     logger.setLevel(DEBUG)
 
-    stream_formatter = stream_formatter if stream_formatter is not None else (
-        ColoredFormatter(extra_args=extra_log_args)) if stream_in_color else Formatter(
-        '[%(asctime)s | %(levelname)s] [%(filename)s | lineno%(lineno)d | %(funcName)s] => %(message)s'
-    )
-    stream_handler: logging.Handler = StreamHandler()
-    stream_handler.setLevel(stream_level)
-    stream_handler.setFormatter(
-        stream_formatter
-    )
+    if stream_formatter is not None:
+        stream_formatter: Formatter = stream_formatter if isinstance(stream_formatter, Formatter) else (
+            ColoredFormatter(extra_args=extra_log_args)) if stream_in_color else Formatter(
+            '[%(asctime)s | %(levelname)s] [%(filename)s | lineno%(lineno)d | %(funcName)s] => %(message)s'
+        )
+        stream_handler: logging.Handler = StreamHandler()
+        stream_handler.setLevel(stream_level)
+        stream_handler.setFormatter(
+            stream_formatter
+        )
+        logger.addHandler(stream_handler)
 
-    timed_rotating_file_handler_kwargs = timed_rotating_file_handler_kwargs if timed_rotating_file_handler_kwargs is not None \
-        else {
-        'filename': log_file_path,
-        'when': 'midnight',
-        'interval': 1,
-        'backupCount': 3
-    }
+    if file_formatter is not None:
+        timed_rotating_file_handler_kwargs = timed_rotating_file_handler_kwargs if timed_rotating_file_handler_kwargs is not None \
+            else {
+            'filename': log_file_path,
+            'when': 'midnight',
+            'interval': 1,
+            'backupCount': 3
+        }
 
-    file_formatter = file_formatter if file_formatter is not None else (
-        JsonFormatter(extra_args=extra_log_args)) if log_in_json else Formatter(
-        '[%(asctime)s | %(levelname)s] [%(filename)s | lineno%(lineno)d | %(funcName)s] => %(message)s'
-    )
-    timed_rotating_file_handler: logging.Handler = TimedRotatingFileHandler(
-        **timed_rotating_file_handler_kwargs
-    )
-    timed_rotating_file_handler.setLevel(log_level)
-    timed_rotating_file_handler.setFormatter(
-        file_formatter
-    )
+        file_formatter: Formatter = file_formatter if isinstance(file_formatter, Formatter) else (
+            JsonFormatter(extra_args=extra_log_args)) if log_in_json else Formatter(
+            '[%(asctime)s | %(levelname)s] [%(filename)s | lineno%(lineno)d | %(funcName)s] => %(message)s'
+        )
+        timed_rotating_file_handler: logging.Handler = TimedRotatingFileHandler(
+            **timed_rotating_file_handler_kwargs
+        )
+        timed_rotating_file_handler.setLevel(log_level)
+        timed_rotating_file_handler.setFormatter(
+            file_formatter
+        )
 
-    logger.addHandler(stream_handler)
-    logger.addHandler(timed_rotating_file_handler)
+        logger.addHandler(timed_rotating_file_handler)
 
     logger.propagate = False
 
