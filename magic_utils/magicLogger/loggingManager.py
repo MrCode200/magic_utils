@@ -48,10 +48,10 @@ def setup_logger(
 
        :return: None
        """
-    if stream_in_color and stream_formatter:
-        raise ValueError("stream_in_color and stream_formatter cannot be both True")
-    if log_in_json and file_formatter:
-        raise ValueError("log_in_json and file_formatter cannot be both True")
+    if stream_in_color and isinstance(stream_formatter, Formatter):
+        raise ValueError("stream_in_color cannot be True while stream_formatter is of instance Formatter")
+    if log_in_json and isinstance(file_formatter, Formatter):
+        raise ValueError("log_in_json cannot be True while file_formatter is of instance Formatter")
 
     logger: logging.Logger = getLogger(logger_name)
     logger.handlers.clear() if remove_previous_handlers else None
