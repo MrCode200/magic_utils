@@ -64,7 +64,7 @@ def test_setup_logger_raises_for_conflicting_stream_formatter():
             'test.logger',
             '/logs/app.jsonl',
             stream_in_color=True,
-            stream_formatter=StreamHandler()
+            stream_formatter=Formatter()
         )
 
 
@@ -74,7 +74,7 @@ def test_setup_logger_raises_for_conflicting_file_formatter():
             'test.logger',
             '/logs/app.jsonl',
             log_in_json=True,
-            file_formatter=StreamHandler()
+            file_formatter=Formatter()
         )
 
 
