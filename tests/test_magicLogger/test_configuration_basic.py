@@ -59,7 +59,7 @@ def test_setup_logger_uses_custom_timed_rotating_kwargs(log_file_path):
 
 
 def test_setup_logger_raises_for_conflicting_stream_formatter():
-    with pytest.raises(ValueError, match="stream_in_color and stream_formatter cannot be both True"):
+    with pytest.raises(ValueError, match="stream_in_color cannot be True while stream_formatter is of instance Formatter"):
         setup_logger(
             'test.logger',
             '/logs/app.jsonl',
@@ -69,7 +69,7 @@ def test_setup_logger_raises_for_conflicting_stream_formatter():
 
 
 def test_setup_logger_raises_for_conflicting_file_formatter():
-    with pytest.raises(ValueError, match="log_in_json and file_formatter cannot be both True"):
+    with pytest.raises(ValueError, match="log_in_json cannot be True while file_formatter is of instance Formatter"):
         setup_logger(
             'test.logger',
             '/logs/app.jsonl',
