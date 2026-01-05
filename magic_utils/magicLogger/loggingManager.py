@@ -15,8 +15,8 @@ def setup_logger(
         stream_level: int = DEBUG,
         log_level: int = DEBUG,
         stream_in_color: bool = True,
-        stream_formatter: Optional[Formatter | Literal['default']] = None, # TODO: test Literal['default'] vs None
-        file_formatter: Optional[Formatter | Literal['default']] = None, # TODO: test Literal['default']
+        stream_formatter: Optional[Formatter | Literal['default']] = 'default', # TODO: test Literal['default'] vs None
+        file_formatter: Optional[Formatter | Literal['default']] = 'default', # TODO: test Literal['default']
         log_in_json: bool = True,
         extra_log_args: list[str] = None,
         remove_previous_handlers: bool = True,
