@@ -18,7 +18,7 @@ record_testcase: dict[str, any] = {
     'func': 'fake_function',
 }
 
-@pytest.mark.parameterize("leve,expected_color,level_name", [
+@pytest.mark.parametrize("leve,expected_color,level_name", [
     (logging.DEBUG, '\033[94m', 'DEBUG'),
     (logging.INFO, '\033[92m', 'INFO'),
     (logging.WARNING, '\033[93m', 'WARNING'),
