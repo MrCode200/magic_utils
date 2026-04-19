@@ -81,7 +81,3 @@ def test_formatters_include_extra_args(log_file_path):
 
     assert 'extra1' in colored_formatted and 'value1' in colored_formatted
     assert 'extra2' in colored_formatted and 'None' in colored_formatted
-
-
-if __name__ == '__main__':
-    pytest.main([__file__])

@@ -204,10 +204,9 @@ class AliasRegistry(Registry):
         for c in canonicals:
             aliases = self._canonical_to_aliases.get(c, set()).copy()
 
-            if c and c not in self._registry:
-                self._canonical_to_aliases.pop(c, None)
-                for alias in aliases:
-                    self._alias_to_canonical.pop(alias, None)
+            self._canonical_to_aliases.pop(c, None)
+            for alias in aliases:
+                self._alias_to_canonical.pop(alias, None)
 
     def update(self, key: Hashable, value: Any) -> None:
         """

@@ -22,6 +22,9 @@ def registry():
     logger = logging.getLogger(f"test_registry_{id('test')}")
     logger.setLevel(logging.DEBUG)
 
+    # below only for 100% coverage there
+    temp_handler = logging.StreamHandler()
+    logger.addHandler(temp_handler)
     # Remove all handlers to avoid duplicate logs
     for handler in logger.handlers[:]:
         logger.removeHandler(handler)

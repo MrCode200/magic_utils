@@ -58,3 +58,17 @@ def test_registry_missing_key_exception(registry):
     with pytest.raises(MissingKeyError) as e:
         registry.remove(key='nonExistingKey')
     check_exception_metadata(e)
+
+
+def test_rmv_with_mutliple_same_values(registry):
+    set_register_registry(registry, REGISTER_A)
+    registry.register('argInt2', 2)
+    registry.register('argInt3', 2)
+
+    with pytest.raises(ValueError) as e:
+        registry.remove(value=2, rmv_all=False)
+
+    assert str(e.value) == f"{registry.registry_name}: Multiple keys with value: `2` registered (set rmv_all=True to remove all)."
+
+    registry.remove(value=2, rmv_all=True)
+    assert len([k for k, v in registry.registry.items() if v == 2]) == 0

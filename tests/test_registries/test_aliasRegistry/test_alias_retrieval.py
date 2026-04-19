@@ -1,7 +1,5 @@
 import pytest
 from .constants import REGISTER_A, ALIASES_FOR_ARGINT
-from .helper import set_register_alias_registry
-
 
 def test_resolve_key_to_canonical(alias_registry):
     """Test resolving alias to canonical key."""

@@ -79,7 +79,9 @@ def test_register_function_duplicate_alias(alias_registry):
     with pytest.raises(DuplicateKeyError):
         @alias_registry.register_function(key='func2', aliases=['common'])
         def func2():
-            return 2
+            ...
+
+    assert alias_registry.get("func1")() == 1
 
 
 def test_register_class_duplicate_alias(alias_registry):

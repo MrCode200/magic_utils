@@ -1,7 +1,6 @@
 import pytest
 from magic_utils.exceptions import MissingKeyError
 from .constants import REGISTER_A
-from .helper import set_register_alias_registry
 
 
 def test_update_by_canonical_key(alias_registry):

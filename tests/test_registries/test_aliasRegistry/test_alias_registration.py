@@ -1,8 +1,6 @@
 import pytest
 from magic_utils.exceptions import DuplicateKeyError, MissingKeyError
 from .constants import REGISTER_A, ALIASES_FOR_ARGINT, ALIASES_FOR_ARGSTRING
-from .helper import set_register_alias_registry
-
 
 def test_alias_registry_register_with_aliases(alias_registry):
     """Test registering a key with multiple aliases."""

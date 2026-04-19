@@ -165,22 +165,19 @@ class Registry:
             keys_to_rmv = [k for k, v in self._registry.items() if v == value]
 
             if not rmv_all and len(keys_to_rmv) > 1:
-                raise ValueError(f"{self.registry_name}: Multiple keys with value: `{value}` registered; rmv_all=False.")
+                raise ValueError(f"{self.registry_name}: Multiple keys with value: `{value}` registered (set rmv_all=True to remove all).")
+            elif len(keys_to_rmv) == 0:
+                self.logger.warning(
+                    f"{self.registry_name}: No key with value: `{value}` registered.") if self.logger else None
+                raise MissingKeyError(
+                    f"{self.registry_name}: No key with value: `{value}` registered.",
+                    registry_name=self.registry_name,
+                    missing_key=value,
+                )
 
             for k in keys_to_rmv:
                 del self._registry[k]
                 self.logger.debug(f"{self.registry_name}: Removed `{k}: {value}` from registry") if self.logger else None
-
-                return
-
-            self.logger.warning(
-                f"{self.registry_name}: No key with value: `{value}` registered.") if self.logger else None
-
-            raise MissingKeyError(
-                f"{self.registry_name}: No key with value: `{value}` registered.",
-                registry_name=self.registry_name,
-                missing_key=value,
-            )
 
     def update(self, key: Hashable, value: Any) -> None:
         """
