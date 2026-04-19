@@ -18,7 +18,7 @@ record_testcase: dict[str, any] = {
     'func': 'fake_function',
 }
 
-@pytest.mark.parametrize("leve,expected_color,level_name", [
+@pytest.mark.parametrize("level,expected_color,level_name", [
     (logging.DEBUG, '\033[94m', 'DEBUG'),
     (logging.INFO, '\033[92m', 'INFO'),
     (logging.WARNING, '\033[93m', 'WARNING'),
@@ -32,6 +32,7 @@ def test_colored_formatter_outputs_ansi_and_formatted_fields(log_file_path, leve
     record_testcase_level['level'] = level
 
     record = logger.makeRecord(**record_testcase_level)
+    formatter = ColoredFormatter()
     formatted = formatter.format(record)
 
     assert datetime.date.today().strftime("%Y-%m-%d") in formatted
@@ -80,3 +81,7 @@ def test_formatters_include_extra_args(log_file_path):
 
     assert 'extra1' in colored_formatted and 'value1' in colored_formatted
     assert 'extra2' in colored_formatted and 'None' in colored_formatted
+
+
+if __name__ == '__main__':
+    pytest.main([__file__])
