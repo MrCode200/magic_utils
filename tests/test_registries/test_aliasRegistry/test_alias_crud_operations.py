@@ -1,4 +1,5 @@
 import pytest
+from magic_utils.exceptions import MissingKeyError
 from .constants import REGISTER_A
 from .helper import set_register_alias_registry
 
@@ -19,6 +20,12 @@ def test_update_by_alias(alias_registry):
 
     assert alias_registry.get('argInt') == 5
     assert alias_registry.get('int_alias') == 5
+
+
+def test_update_nonexistent_key(alias_registry):
+    """Test that updating non-existent key raises error."""
+    with pytest.raises(MissingKeyError):
+        alias_registry.update('nonexistent', 'value')
 
 
 def test_remove_by_canonical_removes_aliases(alias_registry):
@@ -53,14 +60,34 @@ def test_remove_by_value_with_aliases(alias_registry):
     assert 'int_alias' not in alias_registry
 
 
-def test_setitem_with_aliases(alias_registry):
-    """Test __setitem__ updates value when key exists."""
+def test_setitem_registers_new_key(alias_registry):
+    """Test __setitem__ registers new key."""
+    alias_registry['newKey'] = 'newValue'
+
+    assert 'newKey' in alias_registry
+    assert alias_registry.get('newKey') == 'newValue'
+
+
+def test_setitem_updates_existing_key(alias_registry):
+    """Test __setitem__ updates existing key without registering."""
     alias_registry.register('argInt', 1, aliases=['int_alias'])
 
+    # Should update, not try to register
     alias_registry['argInt'] = 2
 
     assert alias_registry.get('argInt') == 2
     assert alias_registry.get('int_alias') == 2
+
+
+def test_setitem_via_alias_updates_value(alias_registry):
+    """Test __setitem__ using alias updates the value."""
+    alias_registry.register('argInt', 1, aliases=['int_alias'])
+
+    # Update via alias
+    alias_registry['int_alias'] = 5
+
+    assert alias_registry.get('argInt') == 5
+    assert alias_registry.get('int_alias') == 5
 
 
 def test_contains_with_canonical(alias_registry):

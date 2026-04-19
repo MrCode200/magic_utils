@@ -1,4 +1,5 @@
 import pytest
+from magic_utils.exceptions import DuplicateKeyError
 
 
 def test_register_function_with_aliases(alias_registry):
@@ -27,6 +28,17 @@ def test_register_function_default_key_with_aliases(alias_registry):
     assert 'test_alias' in alias_registry
     assert alias_registry.get('test_func')() == "test"
     assert alias_registry.get('test_alias')() == "test"
+
+
+def test_register_function_no_key_or_aliases(alias_registry):
+    """Test registering function with only function name."""
+
+    @alias_registry.register_function()
+    def simple_func():
+        return "simple"
+
+    assert 'simple_func' in alias_registry
+    assert alias_registry.get('simple_func')() == "simple"
 
 
 def test_register_class_with_aliases(alias_registry):
@@ -64,7 +76,20 @@ def test_register_function_duplicate_alias(alias_registry):
     def func1():
         return 1
 
-    with pytest.raises(Exception):  # DuplicateKeyError
+    with pytest.raises(DuplicateKeyError):
         @alias_registry.register_function(key='func2', aliases=['common'])
         def func2():
             return 2
+
+
+def test_register_class_duplicate_alias(alias_registry):
+    """Test that registering class with duplicate alias raises error."""
+
+    @alias_registry.register_class(key='Class1', aliases=['common'])
+    class Class1:
+        pass
+
+    with pytest.raises(DuplicateKeyError):
+        @alias_registry.register_class(key='Class2', aliases=['common'])
+        class Class2:
+            pass
