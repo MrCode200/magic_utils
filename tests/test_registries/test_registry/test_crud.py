@@ -24,27 +24,28 @@ def test_registry_register_function(registry):
 
 def test_registry_get(registry):
     set_register_registry(registry, REGISTER_A)
-    assert registry.get('argInt') == 1
+    assert registry.get('argInt') == 2
     assert registry['argString'] == "string"
     assert registry.get('argBool') == True
 
 def test_registry_update(registry):
     set_register_registry(registry, REGISTER_A)
 
-    assert registry.get('argInt') == 1
+    assert registry.get('argInt') == 2
     assert registry['argBool'] == True
 
-    registry.update('argInt', 2)
+    registry.update('argInt', 3)
     registry['argBool'] = False
 
-    assert registry.get('argInt') == 2
+    assert registry.get('argInt') == 3
     assert registry.get('argBool') == False
 
 def test_registry_remove(registry):
     set_register_registry(registry, REGISTER_A)
 
     # By Value
-    registry.remove(value=1) # argInt
+    registry.remove(value=2) # argInt
+
     # By Key
     del registry['argString']
 

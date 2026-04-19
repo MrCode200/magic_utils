@@ -156,17 +156,22 @@ class Registry:
                     missing_key=key,
                 )
 
+            value = self._registry[key]
             del self._registry[key]
 
-            self.logger.debug(f"{self.registry_name}: Removed `{key}` from registry") if self.logger else None
+            self.logger.debug(f"{self.registry_name}: Removed `{key}: {value}` from registry") if self.logger else None
 
         else:
-            for k, v in list(self._registry.items()):
-                if v == value:
-                    del self._registry[k]
-                    self.logger.debug(f"{self.registry_name}: Removed `{k}` from registry") if self.logger else None
+            keys_to_rmv = [k for k, v in self._registry.items() if v == value]
 
-                    return
+            if not rmv_all and len(keys_to_rmv) > 1:
+                raise ValueError(f"{self.registry_name}: Multiple keys with value: `{value}` registered; rmv_all=False.")
+
+            for k in keys_to_rmv:
+                del self._registry[k]
+                self.logger.debug(f"{self.registry_name}: Removed `{k}: {value}` from registry") if self.logger else None
+
+                return
 
             self.logger.warning(
                 f"{self.registry_name}: No key with value: `{value}` registered.") if self.logger else None

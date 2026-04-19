@@ -29,9 +29,9 @@ def test_registry_duplicate_key_exception(registry):
         registry.register('argInt', 2)
     check_exception_metadata(e)
 
-    assert registry['argInt'] == 1
+    assert registry['argInt'] == 2
     with pytest.raises(MissingKeyError, match="BaseRegistry: `newKey` not registered."):
-        assert registry['newKey'] == 2
+        assert registry['newKey'] == 3
 
 
 def test_registry_missing_key_exception(registry):

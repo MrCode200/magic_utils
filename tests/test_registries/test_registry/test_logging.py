@@ -61,7 +61,7 @@ def test_registry_logging_remove(registry, caplog):
     # Test remove by key
     with caplog.at_level(logging.DEBUG, logger=registry.logger.name):
         registry.remove('argInt')
-        assert f"{registry.registry_name}: Removed `argInt` from registry" in caplog.text
+        assert f"{registry.registry_name}: Removed `argInt: 2` from registry" in caplog.text
     
     caplog.clear()
     
@@ -76,7 +76,7 @@ def test_registry_logging_remove(registry, caplog):
     # Test remove by value
     with caplog.at_level(logging.DEBUG, logger=registry.logger.name):
         registry.remove(value='string')
-        assert f"{registry.registry_name}: Removed `argString` from registry" in caplog.text
+        assert f"{registry.registry_name}: Removed `argString: string` from registry" in caplog.text
     
     caplog.clear()
     
