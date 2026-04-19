@@ -58,7 +58,7 @@ class JsonFormatter(Formatter):
             "line_number": record.lineno,
             "function": record.funcName,
             "message": record.getMessage(),
-            "exc_info": record.exc_info
+            "exc_info": self.formatException(record.exc_info) if record.exc_info else None
         }
 
         extra_log_record = {
