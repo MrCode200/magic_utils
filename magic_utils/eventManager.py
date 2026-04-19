@@ -1,34 +1,3 @@
-"""
-channel_module
----------------
-
-This module defines the ``Channel`` class, which facilitates the management of subscribers and the notification process.
-
-The ``Channel`` class allows subscribers to be added, removed, and notified either sequentially or in parallel. Subscribers are callable objects that can be invoked with arguments and keyword arguments.
-
-Usage example:
---------------
-    # Create a new channel
-    ch = Channel()
-
-    # Define some subscriber functions
-    def subscriber1(arg1, kwarg1=None):
-        print(f"Subscriber 1: {arg1}, {kwarg1}")
-
-    def subscriber2(arg1, kwarg1=None):
-        print(f"Subscriber 2: {arg1}, {kwarg1}")
-
-    # Subscribe to the channel
-    ch.subscribe(subscriber1, 'data1', kwarg1='value1')
-    ch.subscribe(subscriber2, 'data2')
-
-    # Notify all subscribers sequentially
-    ch.notify_all()
-
-    # Notify all subscribers in parallel (2 threads)
-    ch.notify_parallel(num_threads=2)
-"""
-
 import threading
 import warnings
 

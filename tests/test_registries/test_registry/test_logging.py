@@ -1,7 +1,7 @@
 import logging
 import pytest
 
-from magic_utils.registryManager import Registry
+from magic_utils.registries import Registry
 from magic_utils.exceptions import MissingKeyError, DuplicateKeyError
 from .helper import set_register_registry
 from .constants import REGISTER_A

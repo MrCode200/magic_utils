@@ -17,24 +17,30 @@ record_testcase: dict[str, any] = {
     'func': 'fake_function',
 }
 
-def test_colored_formatter_outputs_ansi_and_formatted_fields(log_file_path):
+@pytest.mark.parameterize("leve,expected_color,level_name", [
+    (logging.DEBUG, '\033[94m', 'DEBUG'),
+    (logging.INFO, '\033[92m', 'INFO'),
+    (logging.WARNING, '\033[93m', 'WARNING'),
+    (logging.ERROR, '\033[91m', 'ERROR'),
+    (logging.CRITICAL, '\033[95m', 'CRITICAL'),
+], ids=["debug-test", "info-test", "warning-test", "error-test", "critical-test"])
+def test_colored_formatter_outputs_ansi_and_formatted_fields(log_file_path, level, expected_color, level_name):
     logger = setup_logger('test.logger', log_file_path)
-    record = logger.makeRecord(
-        **record_testcase
-    )
 
-    formatter = ColoredFormatter()
+    record_testcase_level = record_testcase.copy()
+    record_testcase_level['level'] = level
+
+    record = logger.makeRecord(**record_testcase_level)
     formatted = formatter.format(record)
 
     assert datetime.date.today().strftime("%Y-%m-%d") in formatted
-    assert formatted.startswith('\033[93m')
+    assert formatted.startswith(expected_color)
     assert '\033[0m' in formatted
     assert "Message: hello world" in formatted
-    assert "WARNING" in formatted
+    assert level_name in formatted
     assert "fake_file.py" in formatted
     assert "lineno(123)" in formatted
     assert "fake_function" in formatted
-
 
 def test_json_formatter_outputs_valid_json_and_keys(log_file_path):
     logger = setup_logger('test.logger', log_file_path)

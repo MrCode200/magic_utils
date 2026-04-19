@@ -1,6 +1,6 @@
 import pytest
 
-from magic_utils.registryManager import Registry
+from magic_utils.registries import Registry
 from .helper import set_register_registry
 from .constants import REGISTER_A
 
@@ -32,8 +32,3 @@ def test_registry_singleton(registry):
     registryDifferentName = Registry("RegistryDifferentName")
     assert registryDifferentName != registry
     registryDifferentName.reset()
-
-def test_registry_alias(registry):
-    registry.register(['argBool', 'argBoolAlias'], True)
-    assert registry.get('argBool') == True
-    assert registry.get('argBoolAlias') == True

@@ -1,6 +1,6 @@
 import pytest
 
-from magic_utils.registryManager import Registry
+from magic_utils.registries import Registry
 
 @pytest.fixture
 def registry():

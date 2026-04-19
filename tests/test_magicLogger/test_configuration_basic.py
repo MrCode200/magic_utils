@@ -105,6 +105,29 @@ def test_custom_stream_formatter(log_file_path, capsys):
 
     assert "[test_custom_stream_formatter] => This is a test" == output
 
+def test_stream_formatter_is_none(log_file_path, capsys):
+    logger = setup_logger('test.logger', log_file_path, stream_formatter=None)
+    logger.warning("This is a test")
+    captured = capsys.readouterr()
+    output = captured.err.strip()
+    assert "" in output
+
+    with open(log_file_path, 'r') as f:
+        logline = f.read().strip()
+        assert '"message": "This is a test"' in logline
+
+def test_file_formatter_is_none(log_file_path, caplog, capsys):
+    logger = setup_logger('test.logger', log_file_path, file_formatter=None)
+    logger.warning("This is a test")
+
+    captured = capsys.readouterr()
+    output = captured.err.strip()
+    assert "This is a test" in output
+
+    with open(log_file_path, 'r') as f:
+        logline = f.read().strip()
+        assert "" in logline
+
 def test_custom_file_formatter(log_file_path, caplog):
     custom_formatter: Formatter = Formatter(
         '[%(funcName)s] => %(message)s'

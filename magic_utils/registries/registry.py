@@ -4,6 +4,7 @@ from typing import Any, Dict, Hashable, Union, Optional
 
 from magic_utils.exceptions import DuplicateKeyError, MissingKeyError
 
+
 # fmt: off
 # TODO: on rmv or update, respect aliases
 class Registry:
@@ -17,10 +18,9 @@ class Registry:
         return instance
 
     def __init__(
-        self,
-        registry_name: str = "BaseRegistry",
-        logger: Optional[Logger] = None,
-        raise_exception: bool = True,
+            self,
+            registry_name: str = "BaseRegistry",
+            logger: Optional[Logger] = None,
     ):
         """
         A generic base registry for storing and managing objects by key.
@@ -28,7 +28,6 @@ class Registry:
         :param registry_name: The name of the registry. If not provided, will use "BaseRegistry".
         Registered instances are stored in a class variable `_instances`.
         :param logger: The logger instance to use for logging. If None, won't log.
-        :param raise_exception: Whether to raise exceptions on errors.
         """
         if getattr(self, '_initialized', False):
             return
@@ -38,7 +37,6 @@ class Registry:
 
         self.registry_name: str = registry_name
         self.logger = logger
-        self.raise_exception: bool = raise_exception
 
     @property
     def registry(self) -> Dict[Hashable, Any]:
@@ -50,40 +48,33 @@ class Registry:
         """
         return self._registry
 
-    def register(self, keys: Union[Hashable, list[Hashable]], value: Any) -> None:
+    def register(self, key: Hashable, value: Any) -> None:
         """
-        Register one or more keys with a specified value.
+        Register one key with a specified value.
         Skips registration if a key is already registered completely.
 
-        :param keys: A single key or a list of keys(aliases) to register.
-        :param value: The value to associate with the given key(s).
+        :param key: A hashable key to register.
+        :param value: The value to associate with the given key.
         :raises DuplicateError: If a key is already registered and exceptions are enabled.
         """
-        if not isinstance(keys, list):
-            keys = [keys]
+        if key in self._registry:
+            self.logger.debug(f"{self.registry_name}: `{key}` already registered.") if self.logger else None
 
-        for key in keys:
-            if key in self._registry:
-                self.logger.debug(f"{self.registry_name}: `{key}` already registered.") if self.logger else None
+            raise DuplicateKeyError(
+                f"{self.registry_name}: `{key}` already registered.",
+                registry_name=self.registry_name,
+                duplicate_item=key,
+            )
 
-                if self.raise_exception:
-                    raise DuplicateKeyError(
-                        f"{self.registry_name}: `{key}` already registered.",
-                        registry_name=self.registry_name,
-                        duplicate_item=key,
-                    )
-                return
+        self._registry[key] = value
+        self.logger.debug(f"{self.registry_name}: Registered `{key}` to registry") if self.logger else None
 
-        for key in keys:
-            self._registry[key] = value
-            self.logger.debug(f"{self.registry_name}: Registered `{key}` to registry") if self.logger else None
-
-    def register_function(self, keys: Union[Hashable, list[Hashable], None] = None) -> Any:
+    def register_function(self, key: Optional[Hashable] = None) -> Any:
         """
         A decorator to register a function itself to the registry.
         This registration happens only once when the function is first defined.
 
-        :param keys: A single key or a list of keys(aliases) to register the function with.
+        :param key: A single key to register the function with.
         :return: The decorated function.
         """
         has_registered: bool = False
@@ -91,7 +82,7 @@ class Registry:
         def decorator(func):
             nonlocal has_registered
             if not has_registered:
-                k = func.__name__ if keys is None else keys
+                k = func.__name__ if key is None else key
                 self.register(k, func)
                 has_registered = True
 
@@ -103,50 +94,51 @@ class Registry:
 
         return decorator
 
-    def register_class(self, keys: Union[Hashable, list[Hashable], None] = None) -> Union[None, object]:
+    def register_class(self, key: Optional[Hashable] = None):
         """
         A decorator to register a class to the registry.
 
-        :param keys: A single key or a list of keys(aliases) to register the class with.
+        :param key: The key to register the class with.
         :return: The decorated class.
         """
+
         def decorator(cls):
-            k = cls.__name__ if keys is None else keys
+            k = cls.__name__ if key is None else key
             self.register(k, cls)
             return cls
+
         return decorator
 
     def get(
-        self, key: Union[Hashable, None] = None
-    ) -> Union[Dict[Hashable, Any], Any, None]:
+            self, key: Hashable
+    ) -> Union[Any, None]:
         """
         Retrieve an item from the registry.
 
         :param key: The key to retrieve.
-        :return: The value associated with the key, or the entire registry if `key` is `None`.
+        :return: The value associated with the key.
         :raises NotRegisteredError: If the key is not registered and exceptions are enabled.
         """
         if key not in self._registry:
             self.logger.warning(f"{self.registry_name}: `{key}` not registered.") if self.logger else None
 
-            if self.raise_exception:
-                raise MissingKeyError(
-                    f"{self.registry_name}: `{key}` not registered.",
-                    registry_name=self.registry_name,
-                    missing_key=key,
-                )
-            return
+            raise MissingKeyError(
+                f"{self.registry_name}: `{key}` not registered.",
+                registry_name=self.registry_name,
+                missing_key=key,
+            )
 
         return self._registry[key]
 
-    def remove(self, key: Union[Hashable, None] = None, value: Any = None, all: bool = False) -> None:
+    def remove(self, key: Union[Hashable, None] = None, value: Any = None, rmv_all: bool = False) -> None:
         """
         Remove an item from the registry by key or value.
 
         :param key: The key to remove. If `None`, removal is based on the value.
         :param value: The value to remove. If `None`, removal is based on the key.
-        :param all: Whether to remove all matches. If `True`, removes all matches. Only needed if removed by value.
-        :raises ValueError: If both `key` and `value` are `None`.
+        :param rmv_all: Whether to remove all matches. If `True`, removes all matches. Only needed if removed by value.
+        Else raises error if multiple matches are found.
+        :raises ValueError: If both `key` and `value` are passed or `None`.
         :raises NotRegisteredError: If the key or value is not found and exceptions are enabled.
         """
         if key is None and value is None:
@@ -158,13 +150,11 @@ class Registry:
             if key not in self._registry:
                 self.logger.warning(f"{self.registry_name}: `{key}` not registered.") if self.logger else None
 
-                if self.raise_exception:
-                    raise MissingKeyError(
-                        f"{self.registry_name}: `{key}` not registered.",
-                        registry_name=self.registry_name,
-                        missing_key=key,
-                    )
-                return
+                raise MissingKeyError(
+                    f"{self.registry_name}: `{key}` not registered.",
+                    registry_name=self.registry_name,
+                    missing_key=key,
+                )
 
             del self._registry[key]
 
@@ -178,36 +168,34 @@ class Registry:
 
                     return
 
-            self.logger.warning(f"{self.registry_name}: No key with value: `{value}` registered.") if self.logger else None
+            self.logger.warning(
+                f"{self.registry_name}: No key with value: `{value}` registered.") if self.logger else None
 
-
-            if self.raise_exception:
-                raise MissingKeyError(
-                    f"{self.registry_name}: No key with value: `{value}` registered.",
-                    registry_name=self.registry_name,
-                    missing_key=value,
-                )
+            raise MissingKeyError(
+                f"{self.registry_name}: No key with value: `{value}` registered.",
+                registry_name=self.registry_name,
+                missing_key=value,
+            )
 
     def update(self, key: Hashable, value: Any) -> None:
         """
         Update an item in the registry.
 
-        :param key: The key to remove. If `None`, removal is based on the value.
-        :param value: The value to remove. If `None`, removal is based on the key.
+        :param key: The key to update. If `None`, removal is based on the value.
+        :param value: The value to update to.
         """
         if key not in self._registry:
             self.logger.warning(f"{self.registry_name}: `{key}` not registered.") if self.logger else None
 
-            if self.raise_exception:
-                raise MissingKeyError(
-                    f"{self.registry_name}: `{key}` not registered.",
-                    registry_name=self.registry_name,
-                    missing_key=key,
-                )
-            return
+            raise MissingKeyError(
+                f"{self.registry_name}: `{key}` not registered.",
+                registry_name=self.registry_name,
+                missing_key=key,
+            )
 
         self._registry[key] = value
-        self.logger.debug(f"{self.registry_name}: Updated `{key}` with value `{value}` in registry") if self.logger else None
+        self.logger.debug(
+            f"{self.registry_name}: Updated `{key}` with value `{value}` in registry") if self.logger else None
 
     def reset(self) -> None:
         """

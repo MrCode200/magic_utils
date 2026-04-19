@@ -22,6 +22,3 @@ def test_logging_to_file(log_file_path):
         print(logline)
         assert 'timestamp' in logline
         assert expected_jsonl == {k: v for k, v in logline.items() if k != 'timestamp'}
-
-def test_logging_stream_handler(tmp_path, caplog):
-    ...
