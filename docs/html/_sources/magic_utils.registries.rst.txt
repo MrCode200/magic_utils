@@ -1,0 +1,29 @@
+magic\_utils.registries package
+===============================
+
+Submodules
+----------
+
+magic\_utils.registries.aliasRegistry module
+--------------------------------------------
+
+.. automodule:: magic_utils.registries.aliasRegistry
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+magic\_utils.registries.registry module
+---------------------------------------
+
+.. automodule:: magic_utils.registries.registry
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: magic_utils.registries
+   :members:
+   :undoc-members:
+   :show-inheritance:

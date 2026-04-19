@@ -49,7 +49,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">tests package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="tests.test_magicLogger.html">tests.test_magicLogger package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="tests.test_registryManager.html">tests.test_registryManager package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.html">tests.test_registries package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="tests.test_tunnel.html">tests.test_tunnel package</a></li>
 </ul>
 </li>
@@ -114,12 +114,14 @@
 <li class="toctree-l2"><a class="reference internal" href="tests.test_magicLogger.html#module-tests.test_magicLogger.test_configuration_basic">tests.test_magicLogger.test_configuration_basic module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_custom_file_formatter"><code class="docutils literal notranslate"><span class="pre">test_custom_file_formatter()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_custom_stream_formatter"><code class="docutils literal notranslate"><span class="pre">test_custom_stream_formatter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_file_formatter_is_none"><code class="docutils literal notranslate"><span class="pre">test_file_formatter_is_none()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_setup_logger_clears_previous_handlers"><code class="docutils literal notranslate"><span class="pre">test_setup_logger_clears_previous_handlers()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_setup_logger_creates_logger_with_name"><code class="docutils literal notranslate"><span class="pre">test_setup_logger_creates_logger_with_name()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_setup_logger_raises_for_conflicting_file_formatter"><code class="docutils literal notranslate"><span class="pre">test_setup_logger_raises_for_conflicting_file_formatter()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_setup_logger_raises_for_conflicting_stream_formatter"><code class="docutils literal notranslate"><span class="pre">test_setup_logger_raises_for_conflicting_stream_formatter()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_setup_logger_sets_handler_levels"><code class="docutils literal notranslate"><span class="pre">test_setup_logger_sets_handler_levels()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_setup_logger_uses_custom_timed_rotating_kwargs"><code class="docutils literal notranslate"><span class="pre">test_setup_logger_uses_custom_timed_rotating_kwargs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_configuration_basic.test_stream_formatter_is_none"><code class="docutils literal notranslate"><span class="pre">test_stream_formatter_is_none()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tests.test_magicLogger.html#module-tests.test_magicLogger.test_formatters">tests.test_magicLogger.test_formatters module</a><ul>
@@ -129,65 +131,44 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tests.test_magicLogger.html#module-tests.test_magicLogger.test_integration_logging_io">tests.test_magicLogger.test_integration_logging_io module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_integration_logging_io.test_logging_stream_handler"><code class="docutils literal notranslate"><span class="pre">test_logging_stream_handler()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="tests.test_magicLogger.html#tests.test_magicLogger.test_integration_logging_io.test_logging_to_file"><code class="docutils literal notranslate"><span class="pre">test_logging_to_file()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tests.test_magicLogger.html#module-tests.test_magicLogger">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tests.test_registryManager.html">tests.test_registryManager package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.conftest">tests.test_registryManager.conftest module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.conftest.registry"><code class="docutils literal notranslate"><span class="pre">registry()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.test_registries.html">tests.test_registries package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_registries.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registries.test_aliasRegistry.html">tests.test_registries.test_aliasRegistry package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_aliasRegistry.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_aliasRegistry.html#module-tests.test_registries.test_aliasRegistry.conftest">tests.test_registries.test_aliasRegistry.conftest module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_aliasRegistry.html#module-tests.test_registries.test_aliasRegistry.constants">tests.test_registries.test_aliasRegistry.constants module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_aliasRegistry.html#module-tests.test_registries.test_aliasRegistry.test_alias_crud_operations">tests.test_registries.test_aliasRegistry.test_alias_crud_operations module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_aliasRegistry.html#module-tests.test_registries.test_aliasRegistry.test_alias_decorators">tests.test_registries.test_aliasRegistry.test_alias_decorators module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_aliasRegistry.html#module-tests.test_registries.test_aliasRegistry.test_alias_dunder">tests.test_registries.test_aliasRegistry.test_alias_dunder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_aliasRegistry.html#module-tests.test_registries.test_aliasRegistry.test_alias_exceptions">tests.test_registries.test_aliasRegistry.test_alias_exceptions module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_aliasRegistry.html#module-tests.test_registries.test_aliasRegistry.test_alias_management">tests.test_registries.test_aliasRegistry.test_alias_management module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_aliasRegistry.html#module-tests.test_registries.test_aliasRegistry.test_alias_registration">tests.test_registries.test_aliasRegistry.test_alias_registration module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_aliasRegistry.html#module-tests.test_registries.test_aliasRegistry.test_alias_retrieval">tests.test_registries.test_aliasRegistry.test_alias_retrieval module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_aliasRegistry.html#module-tests.test_registries.test_aliasRegistry">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.constants">tests.test_registryManager.constants module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.helper">tests.test_registryManager.helper module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.helper.set_register_registry"><code class="docutils literal notranslate"><span class="pre">set_register_registry()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_registries.test_registry.html">tests.test_registries.test_registry package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_registry.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_registry.html#module-tests.test_registries.test_registry.conftest">tests.test_registries.test_registry.conftest module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_registry.html#module-tests.test_registries.test_registry.constants">tests.test_registries.test_registry.constants module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_registry.html#module-tests.test_registries.test_registry.helper">tests.test_registries.test_registry.helper module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_registry.html#module-tests.test_registries.test_registry.test_crud">tests.test_registries.test_registry.test_crud module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_registry.html#module-tests.test_registries.test_registry.test_dunder">tests.test_registries.test_registry.test_dunder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_registry.html#module-tests.test_registries.test_registry.test_exceptions">tests.test_registries.test_registry.test_exceptions module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_registry.html#module-tests.test_registries.test_registry.test_logging">tests.test_registries.test_registry.test_logging module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_registry.html#module-tests.test_registries.test_registry.test_other">tests.test_registries.test_registry.test_other module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_registries.test_registry.html#module-tests.test_registries.test_registry">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.test_crud">tests.test_registryManager.test_crud module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_crud.test_registry_get"><code class="docutils literal notranslate"><span class="pre">test_registry_get()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_crud.test_registry_register"><code class="docutils literal notranslate"><span class="pre">test_registry_register()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_crud.test_registry_register_class"><code class="docutils literal notranslate"><span class="pre">test_registry_register_class()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_crud.test_registry_register_function"><code class="docutils literal notranslate"><span class="pre">test_registry_register_function()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_crud.test_registry_remove"><code class="docutils literal notranslate"><span class="pre">test_registry_remove()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_crud.test_registry_update"><code class="docutils literal notranslate"><span class="pre">test_registry_update()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.test_dunder">tests.test_registryManager.test_dunder module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_dunder.registry"><code class="docutils literal notranslate"><span class="pre">registry()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_dunder.test_registry_contains"><code class="docutils literal notranslate"><span class="pre">test_registry_contains()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_dunder.test_registry_eq"><code class="docutils literal notranslate"><span class="pre">test_registry_eq()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_dunder.test_registry_len"><code class="docutils literal notranslate"><span class="pre">test_registry_len()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_dunder.test_registry_repr"><code class="docutils literal notranslate"><span class="pre">test_registry_repr()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.test_exceptions">tests.test_registryManager.test_exceptions module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_exceptions.test_duplicate_key_error_str"><code class="docutils literal notranslate"><span class="pre">test_duplicate_key_error_str()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_exceptions.test_registry_duplicate_key_exception"><code class="docutils literal notranslate"><span class="pre">test_registry_duplicate_key_exception()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_exceptions.test_registry_missing_key_exception"><code class="docutils literal notranslate"><span class="pre">test_registry_missing_key_exception()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_exceptions.test_registry_raise_exception_false"><code class="docutils literal notranslate"><span class="pre">test_registry_raise_exception_false()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.test_logging">tests.test_registryManager.test_logging module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_logging.registry"><code class="docutils literal notranslate"><span class="pre">registry()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_logging.reset_registry"><code class="docutils literal notranslate"><span class="pre">reset_registry()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_logging.test_registry_logging_get"><code class="docutils literal notranslate"><span class="pre">test_registry_logging_get()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_logging.test_registry_logging_register"><code class="docutils literal notranslate"><span class="pre">test_registry_logging_register()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_logging.test_registry_logging_remove"><code class="docutils literal notranslate"><span class="pre">test_registry_logging_remove()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_logging.test_registry_logging_update"><code class="docutils literal notranslate"><span class="pre">test_registry_logging_update()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager.test_other">tests.test_registryManager.test_other module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_other.registry"><code class="docutils literal notranslate"><span class="pre">registry()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_other.test_registry_alias"><code class="docutils literal notranslate"><span class="pre">test_registry_alias()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_other.test_registry_reset"><code class="docutils literal notranslate"><span class="pre">test_registry_reset()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_registryManager.html#tests.test_registryManager.test_other.test_registry_singleton"><code class="docutils literal notranslate"><span class="pre">test_registry_singleton()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="tests.test_registryManager.html#module-tests.test_registryManager">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.test_registries.html#module-tests.test_registries">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tests.test_tunnel.html">tests.test_tunnel package</a><ul>

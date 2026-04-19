@@ -1,0 +1,19 @@
+tests.test\_registries package
+==============================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   tests.test_registries.test_aliasRegistry
+   tests.test_registries.test_registry
+
+Module contents
+---------------
+
+.. automodule:: tests.test_registries
+   :members:
+   :undoc-members:
+   :show-inheritance:

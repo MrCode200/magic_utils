@@ -1,0 +1,77 @@
+tests.test\_registries.test\_registry package
+=============================================
+
+Submodules
+----------
+
+tests.test\_registries.test\_registry.conftest module
+-----------------------------------------------------
+
+.. automodule:: tests.test_registries.test_registry.conftest
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_registries.test\_registry.constants module
+------------------------------------------------------
+
+.. automodule:: tests.test_registries.test_registry.constants
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_registries.test\_registry.helper module
+---------------------------------------------------
+
+.. automodule:: tests.test_registries.test_registry.helper
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_registries.test\_registry.test\_crud module
+-------------------------------------------------------
+
+.. automodule:: tests.test_registries.test_registry.test_crud
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_registries.test\_registry.test\_dunder module
+---------------------------------------------------------
+
+.. automodule:: tests.test_registries.test_registry.test_dunder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_registries.test\_registry.test\_exceptions module
+-------------------------------------------------------------
+
+.. automodule:: tests.test_registries.test_registry.test_exceptions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_registries.test\_registry.test\_logging module
+----------------------------------------------------------
+
+.. automodule:: tests.test_registries.test_registry.test_logging
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_registries.test\_registry.test\_other module
+--------------------------------------------------------
+
+.. automodule:: tests.test_registries.test_registry.test_other
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: tests.test_registries.test_registry
+   :members:
+   :undoc-members:
+   :show-inheritance:

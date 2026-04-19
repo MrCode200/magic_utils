@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tests.test_registries.test_aliasRegistry package &mdash; magic_utils 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tests.test_registries.test_registry package" href="tests.test_registries.test_registry.html" />
+    <link rel="prev" title="tests.test_registries package" href="tests.test_registries.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            magic_utils
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">magic_utils</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="magic_utils.html">magic_utils package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="tests.html">tests package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="tests.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="tests.test_magicLogger.html">tests.test_magicLogger package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="tests.test_registries.html">tests.test_registries package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_tunnel.html">tests.test_tunnel package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#module-tests.test_eventManager">tests.test_eventManager module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#module-tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">magic_utils</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">magic_utils</a></li>
+          <li class="breadcrumb-item"><a href="tests.html">tests package</a></li>
+          <li class="breadcrumb-item"><a href="tests.test_registries.html">tests.test_registries package</a></li>
+      <li class="breadcrumb-item active">tests.test_registries.test_aliasRegistry package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tests.test_registries.test_aliasRegistry.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tests-test-registries-test-aliasregistry-package">
+<h1>tests.test_registries.test_aliasRegistry package<a class="headerlink" href="#tests-test-registries-test-aliasregistry-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-tests.test_registries.test_aliasRegistry.conftest">
+<span id="tests-test-registries-test-aliasregistry-conftest-module"></span><h2>tests.test_registries.test_aliasRegistry.conftest module<a class="headerlink" href="#module-tests.test_registries.test_aliasRegistry.conftest" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.conftest.alias_registry">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.conftest.</span></span><span class="sig-name descname"><span class="pre">alias_registry</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/conftest.html#alias_registry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.conftest.alias_registry" title="Link to this definition"></a></dt>
+<dd><p>Fixture providing a fresh AliasRegistry instance for each test.</p>
+</dd></dl>
+
+</section>
+<section id="module-tests.test_registries.test_aliasRegistry.constants">
+<span id="tests-test-registries-test-aliasregistry-constants-module"></span><h2>tests.test_registries.test_aliasRegistry.constants module<a class="headerlink" href="#module-tests.test_registries.test_aliasRegistry.constants" title="Link to this heading"></a></h2>
+</section>
+<section id="module-tests.test_registries.test_aliasRegistry.test_alias_crud_operations">
+<span id="tests-test-registries-test-aliasregistry-test-alias-crud-operations-module"></span><h2>tests.test_registries.test_aliasRegistry.test_alias_crud_operations module<a class="headerlink" href="#module-tests.test_registries.test_aliasRegistry.test_alias_crud_operations" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_contains_with_alias">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_crud_operations.</span></span><span class="sig-name descname"><span class="pre">test_contains_with_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_crud_operations.html#test_contains_with_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_contains_with_alias" title="Link to this definition"></a></dt>
+<dd><p>Test __contains__ with alias.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_contains_with_canonical">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_crud_operations.</span></span><span class="sig-name descname"><span class="pre">test_contains_with_canonical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_crud_operations.html#test_contains_with_canonical"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_contains_with_canonical" title="Link to this definition"></a></dt>
+<dd><p>Test __contains__ with canonical key.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_remove_by_alias_removes_all">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_crud_operations.</span></span><span class="sig-name descname"><span class="pre">test_remove_by_alias_removes_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_crud_operations.html#test_remove_by_alias_removes_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_remove_by_alias_removes_all" title="Link to this definition"></a></dt>
+<dd><p>Test that removing by alias removes canonical and all aliases.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_remove_by_canonical_removes_aliases">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_crud_operations.</span></span><span class="sig-name descname"><span class="pre">test_remove_by_canonical_removes_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_crud_operations.html#test_remove_by_canonical_removes_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_remove_by_canonical_removes_aliases" title="Link to this definition"></a></dt>
+<dd><p>Test that removing canonical key also removes all aliases.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_remove_by_value_with_aliases">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_crud_operations.</span></span><span class="sig-name descname"><span class="pre">test_remove_by_value_with_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_crud_operations.html#test_remove_by_value_with_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_remove_by_value_with_aliases" title="Link to this definition"></a></dt>
+<dd><p>Test removing by value when aliases exist.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_reset_clears_aliases">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_crud_operations.</span></span><span class="sig-name descname"><span class="pre">test_reset_clears_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_crud_operations.html#test_reset_clears_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_reset_clears_aliases" title="Link to this definition"></a></dt>
+<dd><p>Test that reset clears both registry and aliases.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_setitem_registers_new_key">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_crud_operations.</span></span><span class="sig-name descname"><span class="pre">test_setitem_registers_new_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_crud_operations.html#test_setitem_registers_new_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_setitem_registers_new_key" title="Link to this definition"></a></dt>
+<dd><p>Test __setitem__ registers new key.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_setitem_updates_existing_key">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_crud_operations.</span></span><span class="sig-name descname"><span class="pre">test_setitem_updates_existing_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_crud_operations.html#test_setitem_updates_existing_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_setitem_updates_existing_key" title="Link to this definition"></a></dt>
+<dd><p>Test __setitem__ updates existing key without registering.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_setitem_via_alias_updates_value">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_crud_operations.</span></span><span class="sig-name descname"><span class="pre">test_setitem_via_alias_updates_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_crud_operations.html#test_setitem_via_alias_updates_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_setitem_via_alias_updates_value" title="Link to this definition"></a></dt>
+<dd><p>Test __setitem__ using alias updates the value.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_update_by_alias">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_crud_operations.</span></span><span class="sig-name descname"><span class="pre">test_update_by_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_crud_operations.html#test_update_by_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_update_by_alias" title="Link to this definition"></a></dt>
+<dd><p>Test updating value by alias.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_update_by_canonical_key">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_crud_operations.</span></span><span class="sig-name descname"><span class="pre">test_update_by_canonical_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_crud_operations.html#test_update_by_canonical_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_update_by_canonical_key" title="Link to this definition"></a></dt>
+<dd><p>Test updating value by canonical key.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_update_nonexistent_key">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_crud_operations.</span></span><span class="sig-name descname"><span class="pre">test_update_nonexistent_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_crud_operations.html#test_update_nonexistent_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_update_nonexistent_key" title="Link to this definition"></a></dt>
+<dd><p>Test that updating non-existent key raises error.</p>
+</dd></dl>
+
+</section>
+<section id="module-tests.test_registries.test_aliasRegistry.test_alias_decorators">
+<span id="tests-test-registries-test-aliasregistry-test-alias-decorators-module"></span><h2>tests.test_registries.test_aliasRegistry.test_alias_decorators module<a class="headerlink" href="#module-tests.test_registries.test_aliasRegistry.test_alias_decorators" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_decorators.test_register_class_default_key_with_aliases">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_decorators.</span></span><span class="sig-name descname"><span class="pre">test_register_class_default_key_with_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_decorators.html#test_register_class_default_key_with_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_decorators.test_register_class_default_key_with_aliases" title="Link to this definition"></a></dt>
+<dd><p>Test registering class with class name as key and aliases.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_decorators.test_register_class_duplicate_alias">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_decorators.</span></span><span class="sig-name descname"><span class="pre">test_register_class_duplicate_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_decorators.html#test_register_class_duplicate_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_decorators.test_register_class_duplicate_alias" title="Link to this definition"></a></dt>
+<dd><p>Test that registering class with duplicate alias raises error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_decorators.test_register_class_with_aliases">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_decorators.</span></span><span class="sig-name descname"><span class="pre">test_register_class_with_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_decorators.html#test_register_class_with_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_decorators.test_register_class_with_aliases" title="Link to this definition"></a></dt>
+<dd><p>Test registering a class with aliases.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_decorators.test_register_function_default_key_with_aliases">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_decorators.</span></span><span class="sig-name descname"><span class="pre">test_register_function_default_key_with_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_decorators.html#test_register_function_default_key_with_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_decorators.test_register_function_default_key_with_aliases" title="Link to this definition"></a></dt>
+<dd><p>Test registering function with function name as key and aliases.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_decorators.test_register_function_duplicate_alias">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_decorators.</span></span><span class="sig-name descname"><span class="pre">test_register_function_duplicate_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_decorators.html#test_register_function_duplicate_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_decorators.test_register_function_duplicate_alias" title="Link to this definition"></a></dt>
+<dd><p>Test that registering function with duplicate alias raises error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_decorators.test_register_function_no_key_or_aliases">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_decorators.</span></span><span class="sig-name descname"><span class="pre">test_register_function_no_key_or_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_decorators.html#test_register_function_no_key_or_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_decorators.test_register_function_no_key_or_aliases" title="Link to this definition"></a></dt>
+<dd><p>Test registering function with only function name.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_decorators.test_register_function_with_aliases">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_decorators.</span></span><span class="sig-name descname"><span class="pre">test_register_function_with_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_decorators.html#test_register_function_with_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_decorators.test_register_function_with_aliases" title="Link to this definition"></a></dt>
+<dd><p>Test registering a function with aliases.</p>
+</dd></dl>
+
+</section>
+<section id="module-tests.test_registries.test_aliasRegistry.test_alias_dunder">
+<span id="tests-test-registries-test-aliasregistry-test-alias-dunder-module"></span><h2>tests.test_registries.test_aliasRegistry.test_alias_dunder module<a class="headerlink" href="#module-tests.test_registries.test_aliasRegistry.test_alias_dunder" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_dunder.test_alias_registry_eq_different_data">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_dunder.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_eq_different_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_dunder.html#test_alias_registry_eq_different_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_dunder.test_alias_registry_eq_different_data" title="Link to this definition"></a></dt>
+<dd><p>Test inequality when data differs.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_dunder.test_alias_registry_eq_type_check">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_dunder.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_eq_type_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_dunder.html#test_alias_registry_eq_type_check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_dunder.test_alias_registry_eq_type_check" title="Link to this definition"></a></dt>
+<dd><p>Test that __eq__ returns NotImplemented for non-AliasRegistry.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_dunder.test_alias_registry_eq_with_base_registry">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_dunder.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_eq_with_base_registry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_dunder.html#test_alias_registry_eq_with_base_registry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_dunder.test_alias_registry_eq_with_base_registry" title="Link to this definition"></a></dt>
+<dd><p>Test that AliasRegistry doesn’t equal base Registry even with same data.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_dunder.test_alias_registry_len">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_dunder.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_len</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_dunder.html#test_alias_registry_len"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_dunder.test_alias_registry_len" title="Link to this definition"></a></dt>
+<dd><p>Test __len__ counts only canonical keys, not aliases.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_dunder.test_alias_registry_repr">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_dunder.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_dunder.html#test_alias_registry_repr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_dunder.test_alias_registry_repr" title="Link to this definition"></a></dt>
+<dd><p>Test string representation of AliasRegistry.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_dunder.test_alias_registry_repr_multiple">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_dunder.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_repr_multiple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_dunder.html#test_alias_registry_repr_multiple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_dunder.test_alias_registry_repr_multiple" title="Link to this definition"></a></dt>
+<dd><p>Test repr with multiple items.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_dunder.test_alias_registry_repr_no_aliases">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_dunder.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_repr_no_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_dunder.html#test_alias_registry_repr_no_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_dunder.test_alias_registry_repr_no_aliases" title="Link to this definition"></a></dt>
+<dd><p>Test repr with items but no aliases.</p>
+</dd></dl>
+
+</section>
+<section id="module-tests.test_registries.test_aliasRegistry.test_alias_exceptions">
+<span id="tests-test-registries-test-aliasregistry-test-alias-exceptions-module"></span><h2>tests.test_registries.test_aliasRegistry.test_alias_exceptions module<a class="headerlink" href="#module-tests.test_registries.test_aliasRegistry.test_alias_exceptions" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_eq_different_data">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_exceptions.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_eq_different_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_exceptions.html#test_alias_registry_eq_different_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_eq_different_data" title="Link to this definition"></a></dt>
+<dd><p>Test inequality when data differs.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_eq_type_check">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_exceptions.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_eq_type_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_exceptions.html#test_alias_registry_eq_type_check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_eq_type_check" title="Link to this definition"></a></dt>
+<dd><p>Test that __eq__ returns NotImplemented for non-AliasRegistry.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_eq_with_base_registry">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_exceptions.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_eq_with_base_registry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_exceptions.html#test_alias_registry_eq_with_base_registry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_eq_with_base_registry" title="Link to this definition"></a></dt>
+<dd><p>Test that AliasRegistry doesn’t equal base Registry even with same data.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_eq_with_same_aliases_but_different_name">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_exceptions.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_eq_with_same_aliases_but_different_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_exceptions.html#test_alias_registry_eq_with_same_aliases_but_different_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_eq_with_same_aliases_but_different_name" title="Link to this definition"></a></dt>
+<dd><p>Test equality of two AliasRegistry instances with same data.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_eq_with_same_aliases_same_name">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_exceptions.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_eq_with_same_aliases_same_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_exceptions.html#test_alias_registry_eq_with_same_aliases_same_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_eq_with_same_aliases_same_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_len">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_exceptions.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_len</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_exceptions.html#test_alias_registry_len"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_len" title="Link to this definition"></a></dt>
+<dd><p>Test __len__ counts only canonical keys, not aliases.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_repr">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_exceptions.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_exceptions.html#test_alias_registry_repr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_repr" title="Link to this definition"></a></dt>
+<dd><p>Test string representation of AliasRegistry.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_repr_multiple">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_exceptions.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_repr_multiple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_exceptions.html#test_alias_registry_repr_multiple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_repr_multiple" title="Link to this definition"></a></dt>
+<dd><p>Test repr with multiple items.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_repr_no_aliases">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_exceptions.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_repr_no_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_exceptions.html#test_alias_registry_repr_no_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_exceptions.test_alias_registry_repr_no_aliases" title="Link to this definition"></a></dt>
+<dd><p>Test repr with items but no aliases.</p>
+</dd></dl>
+
+</section>
+<section id="module-tests.test_registries.test_aliasRegistry.test_alias_management">
+<span id="tests-test-registries-test-aliasregistry-test-alias-management-module"></span><h2>tests.test_registries.test_aliasRegistry.test_alias_management module<a class="headerlink" href="#module-tests.test_registries.test_aliasRegistry.test_alias_management" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_management.test_add_alias_that_exists_as_canonical">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_management.</span></span><span class="sig-name descname"><span class="pre">test_add_alias_that_exists_as_canonical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_management.html#test_add_alias_that_exists_as_canonical"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_management.test_add_alias_that_exists_as_canonical" title="Link to this definition"></a></dt>
+<dd><p>Test that adding alias that exists as canonical key raises error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_management.test_add_alias_to_canonical">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_management.</span></span><span class="sig-name descname"><span class="pre">test_add_alias_to_canonical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_management.html#test_add_alias_to_canonical"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_management.test_add_alias_to_canonical" title="Link to this definition"></a></dt>
+<dd><p>Test adding an alias to an existing canonical key.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_management.test_add_alias_to_existing_alias">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_management.</span></span><span class="sig-name descname"><span class="pre">test_add_alias_to_existing_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_management.html#test_add_alias_to_existing_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_management.test_add_alias_to_existing_alias" title="Link to this definition"></a></dt>
+<dd><p>Test adding an alias using an existing alias as the key.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_management.test_add_alias_to_nonexistent_key">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_management.</span></span><span class="sig-name descname"><span class="pre">test_add_alias_to_nonexistent_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_management.html#test_add_alias_to_nonexistent_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_management.test_add_alias_to_nonexistent_key" title="Link to this definition"></a></dt>
+<dd><p>Test that adding alias to non-existent key raises error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_management.test_add_duplicate_alias">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_management.</span></span><span class="sig-name descname"><span class="pre">test_add_duplicate_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_management.html#test_add_duplicate_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_management.test_add_duplicate_alias" title="Link to this definition"></a></dt>
+<dd><p>Test that adding a duplicate alias raises error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_management.test_remove_alias">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_management.</span></span><span class="sig-name descname"><span class="pre">test_remove_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_management.html#test_remove_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_management.test_remove_alias" title="Link to this definition"></a></dt>
+<dd><p>Test removing an alias from a canonical key.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_management.test_remove_alias_from_nonexistent_key">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_management.</span></span><span class="sig-name descname"><span class="pre">test_remove_alias_from_nonexistent_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_management.html#test_remove_alias_from_nonexistent_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_management.test_remove_alias_from_nonexistent_key" title="Link to this definition"></a></dt>
+<dd><p>Test that removing alias from non-existent key raises error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_management.test_remove_alias_using_alias_as_key">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_management.</span></span><span class="sig-name descname"><span class="pre">test_remove_alias_using_alias_as_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_management.html#test_remove_alias_using_alias_as_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_management.test_remove_alias_using_alias_as_key" title="Link to this definition"></a></dt>
+<dd><p>Test removing an alias using another alias as the key.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_management.test_remove_nonexistent_alias">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_management.</span></span><span class="sig-name descname"><span class="pre">test_remove_nonexistent_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_management.html#test_remove_nonexistent_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_management.test_remove_nonexistent_alias" title="Link to this definition"></a></dt>
+<dd><p>Test that removing non-existent alias raises error.</p>
+</dd></dl>
+
+</section>
+<section id="module-tests.test_registries.test_aliasRegistry.test_alias_registration">
+<span id="tests-test-registries-test-aliasregistry-test-alias-registration-module"></span><h2>tests.test_registries.test_aliasRegistry.test_alias_registration module<a class="headerlink" href="#module-tests.test_registries.test_aliasRegistry.test_alias_registration" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_duplicate_alias">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_registration.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_duplicate_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_registration.html#test_alias_registry_duplicate_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_duplicate_alias" title="Link to this definition"></a></dt>
+<dd><p>Test that registering with an alias that already exists raises error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_duplicate_alias_in_list">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_registration.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_duplicate_alias_in_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_registration.html#test_alias_registry_duplicate_alias_in_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_duplicate_alias_in_list" title="Link to this definition"></a></dt>
+<dd><p>Test that duplicate values within aliases list raises error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_duplicate_as_alias">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_registration.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_duplicate_as_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_registration.html#test_alias_registry_duplicate_as_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_duplicate_as_alias" title="Link to this definition"></a></dt>
+<dd><p>Test that registering a canonical key that exists as alias raises error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_duplicate_canonical_key">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_registration.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_duplicate_canonical_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_registration.html#test_alias_registry_duplicate_canonical_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_duplicate_canonical_key" title="Link to this definition"></a></dt>
+<dd><p>Test that registering duplicate canonical key raises error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_duplicate_in_aliases">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_registration.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_duplicate_in_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_registration.html#test_alias_registry_duplicate_in_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_duplicate_in_aliases" title="Link to this definition"></a></dt>
+<dd><p>Test that duplicate values in canonical and aliases raises error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_register_empty_aliases">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_registration.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_register_empty_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_registration.html#test_alias_registry_register_empty_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_register_empty_aliases" title="Link to this definition"></a></dt>
+<dd><p>Test registering a key with empty aliases list.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_register_with_aliases">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_registration.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_register_with_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_registration.html#test_alias_registry_register_with_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_register_with_aliases" title="Link to this definition"></a></dt>
+<dd><p>Test registering a key with multiple aliases.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_register_without_aliases">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_registration.</span></span><span class="sig-name descname"><span class="pre">test_alias_registry_register_without_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_registration.html#test_alias_registry_register_without_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_registration.test_alias_registry_register_without_aliases" title="Link to this definition"></a></dt>
+<dd><p>Test registering a key without aliases.</p>
+</dd></dl>
+
+</section>
+<section id="module-tests.test_registries.test_aliasRegistry.test_alias_retrieval">
+<span id="tests-test-registries-test-aliasregistry-test-alias-retrieval-module"></span><h2>tests.test_registries.test_aliasRegistry.test_alias_retrieval module<a class="headerlink" href="#module-tests.test_registries.test_aliasRegistry.test_alias_retrieval" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_aliases_property">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_retrieval.</span></span><span class="sig-name descname"><span class="pre">test_aliases_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_retrieval.html#test_aliases_property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_aliases_property" title="Link to this definition"></a></dt>
+<dd><p>Test aliases property returns correct mapping.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_canonicals_property">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_retrieval.</span></span><span class="sig-name descname"><span class="pre">test_canonicals_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_retrieval.html#test_canonicals_property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_canonicals_property" title="Link to this definition"></a></dt>
+<dd><p>Test canonicals property returns correct mapping.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_get_by_alias">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_retrieval.</span></span><span class="sig-name descname"><span class="pre">test_get_by_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_retrieval.html#test_get_by_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_get_by_alias" title="Link to this definition"></a></dt>
+<dd><p>Test retrieving value using alias.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_get_by_canonical_key">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_retrieval.</span></span><span class="sig-name descname"><span class="pre">test_get_by_canonical_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_retrieval.html#test_get_by_canonical_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_get_by_canonical_key" title="Link to this definition"></a></dt>
+<dd><p>Test retrieving value using canonical key.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_getitem_by_alias">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_retrieval.</span></span><span class="sig-name descname"><span class="pre">test_getitem_by_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_retrieval.html#test_getitem_by_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_getitem_by_alias" title="Link to this definition"></a></dt>
+<dd><p>Test __getitem__ with alias.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_getitem_by_canonical">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_retrieval.</span></span><span class="sig-name descname"><span class="pre">test_getitem_by_canonical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_retrieval.html#test_getitem_by_canonical"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_getitem_by_canonical" title="Link to this definition"></a></dt>
+<dd><p>Test __getitem__ with canonical key.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_resolve_key_to_canonical">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_retrieval.</span></span><span class="sig-name descname"><span class="pre">test_resolve_key_to_canonical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_retrieval.html#test_resolve_key_to_canonical"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_resolve_key_to_canonical" title="Link to this definition"></a></dt>
+<dd><p>Test resolving alias to canonical key.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_resolve_nonexistent_key">
+<span class="sig-prename descclassname"><span class="pre">tests.test_registries.test_aliasRegistry.test_alias_retrieval.</span></span><span class="sig-name descname"><span class="pre">test_resolve_nonexistent_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias_registry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_registries/test_aliasRegistry/test_alias_retrieval.html#test_resolve_nonexistent_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_registries.test_aliasRegistry.test_alias_retrieval.test_resolve_nonexistent_key" title="Link to this definition"></a></dt>
+<dd><p>Test resolving non-existent key returns the key itself.</p>
+</dd></dl>
+
+</section>
+<section id="module-tests.test_registries.test_aliasRegistry">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tests.test_registries.test_aliasRegistry" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tests.test_registries.html" class="btn btn-neutral float-left" title="tests.test_registries package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tests.test_registries.test_registry.html" class="btn btn-neutral float-right" title="tests.test_registries.test_registry package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, MrCode200.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

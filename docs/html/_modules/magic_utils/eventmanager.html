@@ -68,38 +68,7 @@
            <div itemprop="articleBody">
              
   <h1>Source code for magic_utils.eventManager</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">channel_module</span>
-<span class="sd">---------------</span>
-
-<span class="sd">This module defines the ``Channel`` class, which facilitates the management of subscribers and the notification process.</span>
-
-<span class="sd">The ``Channel`` class allows subscribers to be added, removed, and notified either sequentially or in parallel. Subscribers are callable objects that can be invoked with arguments and keyword arguments.</span>
-
-<span class="sd">Usage example:</span>
-<span class="sd">--------------</span>
-<span class="sd">    # Create a new channel</span>
-<span class="sd">    ch = Channel()</span>
-
-<span class="sd">    # Define some subscriber functions</span>
-<span class="sd">    def subscriber1(arg1, kwarg1=None):</span>
-<span class="sd">        print(f&quot;Subscriber 1: {arg1}, {kwarg1}&quot;)</span>
-
-<span class="sd">    def subscriber2(arg1, kwarg1=None):</span>
-<span class="sd">        print(f&quot;Subscriber 2: {arg1}, {kwarg1}&quot;)</span>
-
-<span class="sd">    # Subscribe to the channel</span>
-<span class="sd">    ch.subscribe(subscriber1, &#39;data1&#39;, kwarg1=&#39;value1&#39;)</span>
-<span class="sd">    ch.subscribe(subscriber2, &#39;data2&#39;)</span>
-
-<span class="sd">    # Notify all subscribers sequentially</span>
-<span class="sd">    ch.notify_all()</span>
-
-<span class="sd">    # Notify all subscribers in parallel (2 threads)</span>
-<span class="sd">    ch.notify_parallel(num_threads=2)</span>
-<span class="sd">&quot;&quot;&quot;</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 
 <div class="viewcode-block" id="EventManager">

@@ -9,6 +9,7 @@ Subpackages
 
    magic_utils.exceptions
    magic_utils.magicLogger
+   magic_utils.registries
    magic_utils.tunnel
 
 Submodules
@@ -18,14 +19,6 @@ magic\_utils.eventManager module
 --------------------------------
 
 .. automodule:: magic_utils.eventManager
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-magic\_utils.registryManager module
------------------------------------
-
-.. automodule:: magic_utils.registryManager
    :members:
    :undoc-members:
    :show-inheritance:

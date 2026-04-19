@@ -74,7 +74,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">logging</span><span class="w"> </span><span class="kn">import</span> <span class="n">StreamHandler</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">logging</span><span class="w"> </span><span class="kn">import</span> <span class="n">getLogger</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">logging.handlers</span><span class="w"> </span><span class="kn">import</span> <span class="n">TimedRotatingFileHandler</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Literal</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">.loggingFormatter</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColoredFormatter</span><span class="p">,</span> <span class="n">JsonFormatter</span>
 
@@ -87,8 +87,8 @@
         <span class="n">stream_level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">DEBUG</span><span class="p">,</span>
         <span class="n">log_level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">DEBUG</span><span class="p">,</span>
         <span class="n">stream_in_color</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="n">stream_formatter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Formatter</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">file_formatter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Formatter</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">stream_formatter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Formatter</span> <span class="o">|</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span>
+        <span class="n">file_formatter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Formatter</span> <span class="o">|</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span>
         <span class="n">log_in_json</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">extra_log_args</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">remove_previous_handlers</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -107,8 +107,10 @@
 <span class="sd">       :param stream_level: The log level for the stream handler (e.g., logging.DEBUG, logging.INFO) Defaults to DEBUG.</span>
 <span class="sd">       :param log_level: The log level for the file handler (e.g., logging.DEBUG, logging.INFO) Defaults to DEBUG.</span>
 <span class="sd">       :param stream_in_color: If True, logs to stdout will use colored formatting. Defaults to True.</span>
-<span class="sd">       :param stream_formatter: The formatter to use for the stream handler. Defaults to ColoredFormatter if stream_in_color is True, otherwise uses the default formatter.</span>
-<span class="sd">       :param file_formatter: The formatter to use for the file handler. Defaults to JsonFormatter if log_in_json is True, otherwise uses the default formatter.</span>
+<span class="sd">       :param stream_formatter: The formatter to use for the stream handler. Defaults to ColoredFormatter if stream_in_color is True,</span>
+<span class="sd">       otherwise uses the default formatter when &#39;default&#39; is used. To disable the stream Handler set it to None.</span>
+<span class="sd">       :param file_formatter: The formatter to use for the file handler. Defaults to JsonFormatter if log_in_json is True,</span>
+<span class="sd">       otherwise uses the default formatter when &#39;default&#39; is used. To disable the stream Handler set it to None.</span>
 <span class="sd">       :param log_in_json: If True, logs to file will be written in JSON format. Defaults to True.</span>
 <span class="sd">       :param remove_previous_handlers: If True, removes previous handlers from the logger. Defaults to True.</span>
 <span class="sd">       :param extra_log_args: List of extra attribute keys to include in the logs (e.g., [&#39;arg1&#39;, &#39;arg2&#39;]).</span>
@@ -118,47 +120,49 @@
 
 <span class="sd">       :return: None</span>
 <span class="sd">       &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">stream_in_color</span> <span class="ow">and</span> <span class="n">stream_formatter</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;stream_in_color and stream_formatter cannot be both True&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">log_in_json</span> <span class="ow">and</span> <span class="n">file_formatter</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;log_in_json and file_formatter cannot be both True&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">stream_in_color</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stream_formatter</span><span class="p">,</span> <span class="n">Formatter</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;stream_in_color cannot be True while stream_formatter is of instance Formatter&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">log_in_json</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_formatter</span><span class="p">,</span> <span class="n">Formatter</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;log_in_json cannot be True while file_formatter is of instance Formatter&quot;</span><span class="p">)</span>
 
     <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">=</span> <span class="n">getLogger</span><span class="p">(</span><span class="n">logger_name</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">handlers</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span> <span class="k">if</span> <span class="n">remove_previous_handlers</span> <span class="k">else</span> <span class="kc">None</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">DEBUG</span><span class="p">)</span>
 
-    <span class="n">stream_formatter</span> <span class="o">=</span> <span class="n">stream_formatter</span> <span class="k">if</span> <span class="n">stream_formatter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">(</span>
-        <span class="n">ColoredFormatter</span><span class="p">(</span><span class="n">extra_args</span><span class="o">=</span><span class="n">extra_log_args</span><span class="p">))</span> <span class="k">if</span> <span class="n">stream_in_color</span> <span class="k">else</span> <span class="n">Formatter</span><span class="p">(</span>
-        <span class="s1">&#39;[</span><span class="si">%(asctime)s</span><span class="s1"> | </span><span class="si">%(levelname)s</span><span class="s1">] [</span><span class="si">%(filename)s</span><span class="s1"> | lineno</span><span class="si">%(lineno)d</span><span class="s1"> | </span><span class="si">%(funcName)s</span><span class="s1">] =&gt; </span><span class="si">%(message)s</span><span class="s1">&#39;</span>
-    <span class="p">)</span>
-    <span class="n">stream_handler</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Handler</span> <span class="o">=</span> <span class="n">StreamHandler</span><span class="p">()</span>
-    <span class="n">stream_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">stream_level</span><span class="p">)</span>
-    <span class="n">stream_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span>
-        <span class="n">stream_formatter</span>
-    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">stream_formatter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">stream_formatter</span><span class="p">:</span> <span class="n">Formatter</span> <span class="o">=</span> <span class="n">stream_formatter</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stream_formatter</span><span class="p">,</span> <span class="n">Formatter</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span>
+            <span class="n">ColoredFormatter</span><span class="p">(</span><span class="n">extra_args</span><span class="o">=</span><span class="n">extra_log_args</span><span class="p">))</span> <span class="k">if</span> <span class="n">stream_in_color</span> <span class="k">else</span> <span class="n">Formatter</span><span class="p">(</span>
+            <span class="s1">&#39;[</span><span class="si">%(asctime)s</span><span class="s1"> | </span><span class="si">%(levelname)s</span><span class="s1">] [</span><span class="si">%(filename)s</span><span class="s1"> | lineno</span><span class="si">%(lineno)d</span><span class="s1"> | </span><span class="si">%(funcName)s</span><span class="s1">] =&gt; </span><span class="si">%(message)s</span><span class="s1">&#39;</span>
+        <span class="p">)</span>
+        <span class="n">stream_handler</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Handler</span> <span class="o">=</span> <span class="n">StreamHandler</span><span class="p">()</span>
+        <span class="n">stream_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">stream_level</span><span class="p">)</span>
+        <span class="n">stream_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span>
+            <span class="n">stream_formatter</span>
+        <span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">stream_handler</span><span class="p">)</span>
 
-    <span class="n">timed_rotating_file_handler_kwargs</span> <span class="o">=</span> <span class="n">timed_rotating_file_handler_kwargs</span> <span class="k">if</span> <span class="n">timed_rotating_file_handler_kwargs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> \
-        <span class="k">else</span> <span class="p">{</span>
-        <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="n">log_file_path</span><span class="p">,</span>
-        <span class="s1">&#39;when&#39;</span><span class="p">:</span> <span class="s1">&#39;midnight&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;interval&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s1">&#39;backupCount&#39;</span><span class="p">:</span> <span class="mi">3</span>
-    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">file_formatter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">timed_rotating_file_handler_kwargs</span> <span class="o">=</span> <span class="n">timed_rotating_file_handler_kwargs</span> <span class="k">if</span> <span class="n">timed_rotating_file_handler_kwargs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> \
+            <span class="k">else</span> <span class="p">{</span>
+            <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="n">log_file_path</span><span class="p">,</span>
+            <span class="s1">&#39;when&#39;</span><span class="p">:</span> <span class="s1">&#39;midnight&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;interval&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s1">&#39;backupCount&#39;</span><span class="p">:</span> <span class="mi">3</span>
+        <span class="p">}</span>
 
-    <span class="n">file_formatter</span> <span class="o">=</span> <span class="n">file_formatter</span> <span class="k">if</span> <span class="n">file_formatter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">(</span>
-        <span class="n">JsonFormatter</span><span class="p">(</span><span class="n">extra_args</span><span class="o">=</span><span class="n">extra_log_args</span><span class="p">))</span> <span class="k">if</span> <span class="n">log_in_json</span> <span class="k">else</span> <span class="n">Formatter</span><span class="p">(</span>
-        <span class="s1">&#39;[</span><span class="si">%(asctime)s</span><span class="s1"> | </span><span class="si">%(levelname)s</span><span class="s1">] [</span><span class="si">%(filename)s</span><span class="s1"> | lineno</span><span class="si">%(lineno)d</span><span class="s1"> | </span><span class="si">%(funcName)s</span><span class="s1">] =&gt; </span><span class="si">%(message)s</span><span class="s1">&#39;</span>
-    <span class="p">)</span>
-    <span class="n">timed_rotating_file_handler</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Handler</span> <span class="o">=</span> <span class="n">TimedRotatingFileHandler</span><span class="p">(</span>
-        <span class="o">**</span><span class="n">timed_rotating_file_handler_kwargs</span>
-    <span class="p">)</span>
-    <span class="n">timed_rotating_file_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">log_level</span><span class="p">)</span>
-    <span class="n">timed_rotating_file_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span>
-        <span class="n">file_formatter</span>
-    <span class="p">)</span>
+        <span class="n">file_formatter</span><span class="p">:</span> <span class="n">Formatter</span> <span class="o">=</span> <span class="n">file_formatter</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_formatter</span><span class="p">,</span> <span class="n">Formatter</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span>
+            <span class="n">JsonFormatter</span><span class="p">(</span><span class="n">extra_args</span><span class="o">=</span><span class="n">extra_log_args</span><span class="p">))</span> <span class="k">if</span> <span class="n">log_in_json</span> <span class="k">else</span> <span class="n">Formatter</span><span class="p">(</span>
+            <span class="s1">&#39;[</span><span class="si">%(asctime)s</span><span class="s1"> | </span><span class="si">%(levelname)s</span><span class="s1">] [</span><span class="si">%(filename)s</span><span class="s1"> | lineno</span><span class="si">%(lineno)d</span><span class="s1"> | </span><span class="si">%(funcName)s</span><span class="s1">] =&gt; </span><span class="si">%(message)s</span><span class="s1">&#39;</span>
+        <span class="p">)</span>
+        <span class="n">timed_rotating_file_handler</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Handler</span> <span class="o">=</span> <span class="n">TimedRotatingFileHandler</span><span class="p">(</span>
+            <span class="o">**</span><span class="n">timed_rotating_file_handler_kwargs</span>
+        <span class="p">)</span>
+        <span class="n">timed_rotating_file_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">log_level</span><span class="p">)</span>
+        <span class="n">timed_rotating_file_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span>
+            <span class="n">file_formatter</span>
+        <span class="p">)</span>
 
-    <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">stream_handler</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">timed_rotating_file_handler</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">timed_rotating_file_handler</span><span class="p">)</span>
 
     <span class="n">logger</span><span class="o">.</span><span class="n">propagate</span> <span class="o">=</span> <span class="kc">False</span>
 

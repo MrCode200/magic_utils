@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tests.test_registries.test_aliasRegistry.test_alias_crud_operations &mdash; magic_utils 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=01f34227"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            magic_utils
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">magic_utils</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">magic_utils</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">tests.test_registries.test_aliasRegistry.test_alias_crud_operations</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for tests.test_registries.test_aliasRegistry.test_alias_crud_operations</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">magic_utils.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">MissingKeyError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.constants</span><span class="w"> </span><span class="kn">import</span> <span class="n">REGISTER_A</span>
+
+
+<div class="viewcode-block" id="test_update_by_canonical_key">
+<a class="viewcode-back" href="../../../../tests.test_registries.test_aliasRegistry.html#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_update_by_canonical_key">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_update_by_canonical_key</span><span class="p">(</span><span class="n">alias_registry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test updating value by canonical key.&quot;&quot;&quot;</span>
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">aliases</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int_alias&#39;</span><span class="p">])</span>
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="n">alias_registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+    <span class="k">assert</span> <span class="n">alias_registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;int_alias&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span></div>
+
+
+
+<div class="viewcode-block" id="test_update_by_alias">
+<a class="viewcode-back" href="../../../../tests.test_registries.test_aliasRegistry.html#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_update_by_alias">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_update_by_alias</span><span class="p">(</span><span class="n">alias_registry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test updating value by alias.&quot;&quot;&quot;</span>
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">aliases</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int_alias&#39;</span><span class="p">])</span>
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s1">&#39;int_alias&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="n">alias_registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+    <span class="k">assert</span> <span class="n">alias_registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;int_alias&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span></div>
+
+
+
+<div class="viewcode-block" id="test_update_nonexistent_key">
+<a class="viewcode-back" href="../../../../tests.test_registries.test_aliasRegistry.html#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_update_nonexistent_key">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_update_nonexistent_key</span><span class="p">(</span><span class="n">alias_registry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test that updating non-existent key raises error.&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">MissingKeyError</span><span class="p">):</span>
+        <span class="n">alias_registry</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s1">&#39;nonexistent&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="test_remove_by_canonical_removes_aliases">
+<a class="viewcode-back" href="../../../../tests.test_registries.test_aliasRegistry.html#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_remove_by_canonical_removes_aliases">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_remove_by_canonical_removes_aliases</span><span class="p">(</span><span class="n">alias_registry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test that removing canonical key also removes all aliases.&quot;&quot;&quot;</span>
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">aliases</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int_alias&#39;</span><span class="p">,</span> <span class="s1">&#39;integer&#39;</span><span class="p">])</span>
+
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="s1">&#39;argInt&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">alias_registry</span>
+    <span class="k">assert</span> <span class="s1">&#39;int_alias&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">alias_registry</span>
+    <span class="k">assert</span> <span class="s1">&#39;integer&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">alias_registry</span></div>
+
+
+
+<div class="viewcode-block" id="test_remove_by_alias_removes_all">
+<a class="viewcode-back" href="../../../../tests.test_registries.test_aliasRegistry.html#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_remove_by_alias_removes_all">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_remove_by_alias_removes_all</span><span class="p">(</span><span class="n">alias_registry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test that removing by alias removes canonical and all aliases.&quot;&quot;&quot;</span>
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">aliases</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int_alias&#39;</span><span class="p">,</span> <span class="s1">&#39;integer&#39;</span><span class="p">])</span>
+
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;int_alias&#39;</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="s1">&#39;argInt&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">alias_registry</span>
+    <span class="k">assert</span> <span class="s1">&#39;int_alias&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">alias_registry</span>
+    <span class="k">assert</span> <span class="s1">&#39;integer&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">alias_registry</span></div>
+
+
+
+<div class="viewcode-block" id="test_remove_by_value_with_aliases">
+<a class="viewcode-back" href="../../../../tests.test_registries.test_aliasRegistry.html#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_remove_by_value_with_aliases">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_remove_by_value_with_aliases</span><span class="p">(</span><span class="n">alias_registry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test removing by value when aliases exist.&quot;&quot;&quot;</span>
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">aliases</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int_alias&#39;</span><span class="p">])</span>
+
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="s1">&#39;argInt&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">alias_registry</span>
+    <span class="k">assert</span> <span class="s1">&#39;int_alias&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">alias_registry</span></div>
+
+
+
+<div class="viewcode-block" id="test_setitem_registers_new_key">
+<a class="viewcode-back" href="../../../../tests.test_registries.test_aliasRegistry.html#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_setitem_registers_new_key">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_setitem_registers_new_key</span><span class="p">(</span><span class="n">alias_registry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test __setitem__ registers new key.&quot;&quot;&quot;</span>
+    <span class="n">alias_registry</span><span class="p">[</span><span class="s1">&#39;newKey&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;newValue&#39;</span>
+
+    <span class="k">assert</span> <span class="s1">&#39;newKey&#39;</span> <span class="ow">in</span> <span class="n">alias_registry</span>
+    <span class="k">assert</span> <span class="n">alias_registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;newKey&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;newValue&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="test_setitem_updates_existing_key">
+<a class="viewcode-back" href="../../../../tests.test_registries.test_aliasRegistry.html#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_setitem_updates_existing_key">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_setitem_updates_existing_key</span><span class="p">(</span><span class="n">alias_registry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test __setitem__ updates existing key without registering.&quot;&quot;&quot;</span>
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">aliases</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int_alias&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Should update, not try to register</span>
+    <span class="n">alias_registry</span><span class="p">[</span><span class="s1">&#39;argInt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="k">assert</span> <span class="n">alias_registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+    <span class="k">assert</span> <span class="n">alias_registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;int_alias&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span></div>
+
+
+
+<div class="viewcode-block" id="test_setitem_via_alias_updates_value">
+<a class="viewcode-back" href="../../../../tests.test_registries.test_aliasRegistry.html#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_setitem_via_alias_updates_value">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_setitem_via_alias_updates_value</span><span class="p">(</span><span class="n">alias_registry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test __setitem__ using alias updates the value.&quot;&quot;&quot;</span>
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">aliases</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int_alias&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Update via alias</span>
+    <span class="n">alias_registry</span><span class="p">[</span><span class="s1">&#39;int_alias&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+
+    <span class="k">assert</span> <span class="n">alias_registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+    <span class="k">assert</span> <span class="n">alias_registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;int_alias&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span></div>
+
+
+
+<div class="viewcode-block" id="test_contains_with_canonical">
+<a class="viewcode-back" href="../../../../tests.test_registries.test_aliasRegistry.html#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_contains_with_canonical">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_contains_with_canonical</span><span class="p">(</span><span class="n">alias_registry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test __contains__ with canonical key.&quot;&quot;&quot;</span>
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">aliases</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int_alias&#39;</span><span class="p">])</span>
+    <span class="k">assert</span> <span class="s1">&#39;argInt&#39;</span> <span class="ow">in</span> <span class="n">alias_registry</span></div>
+
+
+
+<div class="viewcode-block" id="test_contains_with_alias">
+<a class="viewcode-back" href="../../../../tests.test_registries.test_aliasRegistry.html#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_contains_with_alias">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_contains_with_alias</span><span class="p">(</span><span class="n">alias_registry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test __contains__ with alias.&quot;&quot;&quot;</span>
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;argInt&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">aliases</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int_alias&#39;</span><span class="p">])</span>
+    <span class="k">assert</span> <span class="s1">&#39;int_alias&#39;</span> <span class="ow">in</span> <span class="n">alias_registry</span></div>
+
+
+
+<div class="viewcode-block" id="test_reset_clears_aliases">
+<a class="viewcode-back" href="../../../../tests.test_registries.test_aliasRegistry.html#tests.test_registries.test_aliasRegistry.test_alias_crud_operations.test_reset_clears_aliases">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_reset_clears_aliases</span><span class="p">(</span><span class="n">alias_registry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test that reset clears both registry and aliases.&quot;&quot;&quot;</span>
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="n">aliases</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;alias1&#39;</span><span class="p">])</span>
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="s1">&#39;value2&#39;</span><span class="p">)</span>
+
+    <span class="n">alias_registry</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">alias_registry</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">alias_registry</span><span class="o">.</span><span class="n">aliases</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">alias_registry</span><span class="o">.</span><span class="n">canonicals</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, MrCode200.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
