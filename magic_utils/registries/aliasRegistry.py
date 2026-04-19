@@ -36,6 +36,14 @@ class AliasRegistry(Registry):
         """Resolve a key or alias to its canonical key."""
         return self._alias_to_canonical.get(key, key)
 
+    def resolve_value_to_canonicals(self, value: Any) -> set[Hashable]:
+        """Resolve a value to its canonical keys."""
+        canonicals: list[Hashable] = []
+        for k, v in self._registry.items():
+            if v == value:
+                canonicals.append(k)
+        return set(canonicals)
+
     def add_alias(self, key: Hashable, alias: Hashable) -> None:
         """
         Add an alias to an existing canonical key.
@@ -185,18 +193,21 @@ class AliasRegistry(Registry):
         """
         canonical = self.resolve_key_to_canonical(key) if key is not None else None
 
-        aliases = (
-            self._canonical_to_aliases.get(canonical, set()).copy()
-            if canonical is not None
-            else set()
-        )
+        canonicals = []
+        if canonical is None:
+            canonicals = self.resolve_value_to_canonicals(value)
+        else:
+            canonicals.append(canonical)
 
         super().remove(canonical, value, rmv_all)
 
-        if canonical and canonical not in self._registry:
-            self._canonical_to_aliases.pop(canonical, None)
-            for alias in aliases:
-                self._alias_to_canonical.pop(alias, None)
+        for c in canonicals:
+            aliases = self._canonical_to_aliases.get(c, set()).copy()
+
+            if c and c not in self._registry:
+                self._canonical_to_aliases.pop(c, None)
+                for alias in aliases:
+                    self._alias_to_canonical.pop(alias, None)
 
     def update(self, key: Hashable, value: Any) -> None:
         """
@@ -218,7 +229,11 @@ class AliasRegistry(Registry):
         return key in self._registry or key in self._alias_to_canonical
 
     def __setitem__(self, key, value):
-        self.register(key, value)
+        canonical = self.resolve_key_to_canonical(key)
+        if canonical in self._registry:
+            self.update(key, value)
+        else:
+            self.register(key, value)
 
     def __eq__(self, other):
         if not isinstance(other, AliasRegistry):

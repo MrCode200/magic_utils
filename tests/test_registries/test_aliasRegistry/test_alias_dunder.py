@@ -1,27 +1,6 @@
 import pytest
 from magic_utils.registries import AliasRegistry, Registry
 
-
-def test_alias_registry_eq_with_same_aliases(alias_registry):
-    """Test equality of two AliasRegistry instances with same data."""
-    alias_registry.register('key1', 'value1', aliases=['alias1'])
-
-    registry2 = AliasRegistry(registry_name="OtherRegistry")
-    registry2.register('key1', 'value1', aliases=['alias1'])
-
-    assert alias_registry == registry2
-
-
-def test_alias_registry_eq_different_aliases(alias_registry):
-    """Test inequality when aliases differ."""
-    alias_registry.register('key1', 'value1', aliases=['alias1'])
-
-    registry2 = AliasRegistry(registry_name="OtherRegistry")
-    registry2.register('key1', 'value1', aliases=['alias2'])
-
-    assert not (alias_registry == registry2)
-
-
 def test_alias_registry_eq_different_data(alias_registry):
     """Test inequality when data differs."""
     alias_registry.register('key1', 'value1', aliases=['alias1'])

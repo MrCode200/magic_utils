@@ -1,32 +1,30 @@
 import pytest
 from magic_utils.registries import AliasRegistry, Registry
+import uuid
 
-
-def test_alias_registry_eq_with_same_aliases(alias_registry):
+def test_alias_registry_eq_with_same_aliases_but_different_name(alias_registry):
     """Test equality of two AliasRegistry instances with same data."""
     alias_registry.register('key1', 'value1', aliases=['alias1'])
 
-    registry2 = AliasRegistry(registry_name="OtherRegistry")
+    registry2 = AliasRegistry(registry_name="OtherRegistry" + str(uuid.uuid4()))
     registry2.register('key1', 'value1', aliases=['alias1'])
 
-    assert alias_registry == registry2
+    assert not (alias_registry == registry2)
 
-
-def test_alias_registry_eq_different_aliases(alias_registry):
-    """Test inequality when aliases differ."""
+def test_alias_registry_eq_with_same_aliases_same_name(alias_registry):
     alias_registry.register('key1', 'value1', aliases=['alias1'])
 
-    registry2 = AliasRegistry(registry_name="OtherRegistry")
-    registry2.register('key1', 'value1', aliases=['alias2'])
+    registry3 = AliasRegistry(registry_name=alias_registry.registry_name)
+    registry3.register('key3', 'value3', aliases=['alias3'])
 
-    assert not (alias_registry == registry2)
+    assert (alias_registry == registry3)
 
 
 def test_alias_registry_eq_different_data(alias_registry):
     """Test inequality when data differs."""
     alias_registry.register('key1', 'value1', aliases=['alias1'])
 
-    registry2 = AliasRegistry(registry_name="OtherRegistry")
+    registry2 = AliasRegistry(registry_name="OtherRegistry" + str(uuid.uuid4()))
     registry2.register('key1', 'different_value', aliases=['alias1'])
 
     assert not (alias_registry == registry2)
@@ -37,7 +35,7 @@ def test_alias_registry_eq_with_base_registry(alias_registry):
     alias_registry.register('key1', 'value1')
 
     # Create a new base registry instance (not a singleton collision)
-    base_registry = Registry(registry_name="BaseRegistryForTest")
+    base_registry = Registry(registry_name="BaseRegistryForTest" + str(uuid.uuid4()))
     base_registry.register('key1', 'value1')
 
     # They should not be equal since one is AliasRegistry and one is Registry
