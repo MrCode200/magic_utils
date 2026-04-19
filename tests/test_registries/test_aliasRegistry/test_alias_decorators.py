@@ -81,7 +81,7 @@ def test_register_function_duplicate_alias(alias_registry):
         def func2():
             ...
 
-    assert alias_registry.get("func1")() == 1
+    assert alias_registry.get("func1")() == func1()
 
 
 def test_register_class_duplicate_alias(alias_registry):
