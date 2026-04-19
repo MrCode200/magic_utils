@@ -50,6 +50,7 @@ NOTE: if it doesn't work try to go inside the folder and then run the commands
 
 ## Documentation
 
+- To view interactive and thorough documentation by devin.ai click [here][https://app.devin.ai/org/navidyaghmaei/wiki/MrCode200/magic_utils?branch=main]
 - To view documentation in your website click [here](https://raw.githack.com/MrCode200/magic_utils/refs/heads/main/docs/html/index.html).
 
 Or
