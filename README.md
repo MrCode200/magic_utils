@@ -62,8 +62,9 @@ Or
 
 1. [x] Generate documentation
 2. [X] Add TunnelMole
-3. [ ] Register Function should on default use function name as key (same for class) (needs testing, feature implemented)
-4. [ ] Registry should have ability to delete by all aliases
+3. [x] Register Function should on default use function name as key (same for class) (needs testing, feature implemented)
+4. [x] Registry should have ability to delete by all aliases
+5. [ ] Event Manager to be able to notify specific functions (not notify_all only interface to call them)
 
 
 ## Call for Contributions
